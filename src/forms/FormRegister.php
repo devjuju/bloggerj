@@ -2,7 +2,7 @@
 
 namespace App\Forms;
 
-require_once('src/validators/validatorregister.php');
+
 use App\Validators\ValidatorRegister;
 
 class FormRegister

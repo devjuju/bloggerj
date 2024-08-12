@@ -3,7 +3,6 @@
 namespace App\Forms;
 
 use App\Validators\ValidatorContact;
-require_once('src/validators/validatorcontact.php');
 
 class FormContact
 {
