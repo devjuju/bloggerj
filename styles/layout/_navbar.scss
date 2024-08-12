@@ -1,0 +1,58 @@
+/* Navigation du frontend */
+.navbar {
+    .navbar-brand {
+      color: $colour-title;
+      font-family: $font-logo;
+      font-size: 38px;
+      padding-right: 20px;
+      &:hover{
+        color: $colour-primary;
+      }
+    }
+    .navigation{
+        padding-left: 10px;
+        padding-right: 10px;
+        .nav-link{
+            color: $colour-title;
+            font-family: $font-family;
+            font-size: 18px;
+            
+            &:hover{
+                color: $colour-primary;
+            }
+        }
+    }
+}
+
+/* Navigation du backend */
+.navbar-backend{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: white;
+    box-shadow: #fdf6f0 0px 7px 29px 0px;
+    .navbar-nav{
+        padding-left: 145px;
+    }
+    .container-fluid{
+        padding-right: 45px;
+        .navbar-brand{
+            & img{
+                width: 47px;
+              }
+              & span{
+                font-family: $font-logo;
+                font-size: 30px;
+                color: white;
+                margin-left: 15px;
+            }
+        }
+    }
+
+   
+
+
+    
+}

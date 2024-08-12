@@ -1,0 +1,103 @@
+/*----------------------------------- Typographie du site -----------------------------*/
+h1{ 
+    font-family: $font-family;
+    font-size: 74px;
+    color: $colour-title;
+    font-weight: $font-bold;
+}
+
+.title-dasboard{
+    font-family: $font-family;
+    font-size: 38px;
+    color: $colour-title;
+    font-weight: $font-bold;
+}
+
+h2{ 
+    font-family: $font-family;
+    font-size: 46px;
+    color: $colour-title;
+    font-weight: $font-bold;
+}
+
+h3{
+    font-family: $font-family;
+    font-size: 29px;
+    color: $colour-title;
+    font-weight: $font-bold;
+}
+
+h4{
+    font-family: $font-family;
+    font-size: 26px;
+    color: $colour-title;
+    font-weight: $font-bold;
+}
+
+
+h5{
+    font-family: $font-family;
+    font-size: 24px;
+    color: $colour-title;
+    font-weight: $font-bold;
+}
+
+h6{
+    font-family: $font-family;
+    font-size: 24px;
+    color: $colour-title;
+    font-weight: $font-bold;
+}
+
+
+
+p{
+    font-family: $font-family;
+    font-size: 18px;
+    color: $colour-text;
+    font-weight: $font-regular;
+}
+
+.texte-info{
+    font-family: $font-family;
+    font-size: 18px;
+    color: $colour-primary;
+    font-weight: $font-medium;
+}
+
+
+.subtitle{
+    font-family: $font-family;
+    font-size: 20px;
+    color: $colour-subtitle;
+    font-weight: $font-medium;
+}
+
+.text-color-primary{
+    color: $colour-primary;
+}
+
+.text-primary{
+    color: $colour-primary;
+}
+
+.color-link-primary{
+    color: $colour-primary;
+    &:hover{
+        text-decoration: underline; 
+    }
+}
+
+.background-beige{
+    background-color: $colour-background;
+}
+
+.fs-5x {
+    font-size: 50px;
+}
+
+
+.py-12 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}

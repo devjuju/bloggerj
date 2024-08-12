@@ -1,0 +1,15 @@
+/* badges */
+.badge-counter{
+    color: $colour-body;
+    background-color: $colour-primary;
+    &.active{
+        color: $colour-body;
+    background-color: $colour-secondary;
+    }
+}
+
+
+
+
+
+

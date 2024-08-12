@@ -1,0 +1,82 @@
+/* Boutons */
+.btn-primary {
+    font-family: $font-family;
+    font-size: 18px;
+    font-weight: $font-medium;
+    color: $colour-body;
+    background: $colour-primary;
+    border: 1px solid $colour-primary;
+    border-radius: 24px;
+    box-shadow: $box-shadow;
+    padding-top: 10px;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    &:hover {
+        background: $colour-body;
+        color: $colour-primary;
+        border: 1px solid $colour-primary;
+    }
+}
+
+
+.btn-outline-primary{
+    font-family: $font-family;
+    font-size: 18px;
+    font-weight: $font-medium;
+    color: $colour-primary;
+    background: $colour-body;
+    border: 1px solid $colour-primary;
+    border-radius: 24px;
+    padding-top: 10px;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    &:hover {
+        background: $colour-primary;
+        color: $colour-body;
+        border: 1px solid $colour-primary;
+    }
+}
+
+
+.btn-secondary {
+    font-family: $font-family;
+    font-size: 18px;
+    font-weight: $font-medium;
+    color: $colour-body;
+    background: $colour-secondary;
+    border: 1px solid $colour-secondary;
+    border-radius: 24px;
+    box-shadow: $box-shadow ;
+    padding-top: 10px;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    &:hover {
+        background: $colour-body;
+        color: $colour-secondary;
+        border: 1px solid $colour-secondary;
+    }
+
+    .btn-link-primary{
+        font-family: $font-family;
+        font-size: 18px;
+        font-weight: $font-medium;
+        color: $colour-primary;
+        padding-top: 10px;
+        padding-left: 28px;
+        padding-right: 28px;
+        padding-bottom: 10px;
+        cursor: pointer;
+        &:hover {
+            color: $colour-secondary;
+        }
+    }
+}
+
+
+/* bouton de load more */

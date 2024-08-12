@@ -1,0 +1,192 @@
+/* cards */
+
+/* card post */
+.card-article{
+    .badge-paint{
+        background-color: $colour-body;
+        color: $colour-primary;
+        box-shadow:$box-shadow ;
+        font-size: 18px;
+        &:hover{
+            background-color: $colour-primary;
+            color: $colour-body;
+        }
+    }
+
+    .card-body{
+        padding-top: 20px;
+        padding-left: 0;
+        padding-right: 0;
+
+        .meta-content-blog{
+            margin-right: 20px;
+        }
+        .badge-content{
+            margin-right: 20px;
+        }
+        .badge{
+            color: $colour-primary;
+            background-color: $colour-background-secondary;
+            font-size: 14px;
+           
+        }
+        .card-title{
+            color: $colour-title;
+            font-weight: $font-bold;
+            font-size: 25px;
+            &:hover{
+                color: $colour-primary;
+            }
+        }
+
+        .card-title2{
+            color: $colour-title;
+            font-weight: $font-bold;
+            font-size: 18px;
+            &:hover{
+                color: $colour-primary;
+            }
+        }
+
+
+
+
+       .me-1 {
+        margin-right: .25rem !important;
+        color: $colour-primary;
+    }
+
+       
+    }
+
+    .card-footer{
+        padding: 0;
+        background-color: $colour-body;
+    }
+}
+
+
+
+
+
+.card-shadow{
+    border: 0;
+    border-radius: 27px;
+    box-shadow:$box-shadow ;
+    margin-bottom: 50px;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+
+    .card-header{
+        margin-bottom: 50px;
+    }
+    .card-title{
+        padding-left: 16px;
+    }
+
+   
+    
+  
+}
+
+
+
+.card-outline{
+    border: 1px solid $colour-primary;
+    border-radius: 27px;
+    padding-top: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 40px;
+    .card-title{
+        padding-left: 16px;
+    }
+}
+
+.card-newsletter{
+    border: 0;
+    border-radius: 27px;
+    background-color: $colour-background;
+    padding-top: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 40px;
+}
+
+
+.card-comment-form{
+    background-color: $colour-background;
+    border-radius: 27px;
+}
+
+
+.card-5{
+    .card-image{
+        border-radius: 10px 0px 0px 10px;
+object-fit: cover;
+
+    }
+}
+
+
+
+.card-light{
+    border: 0;
+    background-color: $colour-none;
+    width: 100%;
+    height: 100%;
+
+    .card-body{
+        background-color: $colour-body;
+        border-radius: 27px;
+        padding-top: 29px;
+    padding-left: 29px;
+    padding-right: 29px;
+    padding-bottom: 29px;
+
+    .icon-utils {
+        background-color: #986df8;
+        border-radius: 20px;
+        padding-top: 12px;
+        padding-right: 12px;
+        padding-left: 12px;
+        padding-bottom: 12px;
+        & i{
+            font-size: 30px;
+            color: azure;
+        }
+    }
+      
+    }
+    
+}
+
+
+
+.card-background{
+    border: 0;
+    border-radius: 27px;
+    margin-bottom: 50px;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    background-color: $colour-background;
+    .card-body{
+        & h4{
+            font-size: 24px;
+            color: $colour-title;
+            font-weight: $font-bold;
+            font-family: $font-family;
+            margin-bottom: 1.2em;
+        }
+        & p{
+            color: #5b5a67;
+            font-size: 16px;
+            font-family: $font-text;
+        }
+
+    }
+}

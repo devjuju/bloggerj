@@ -1,0 +1,14 @@
+{
+    "name": "justineleleu/bloggerj",
+    "description": "Créez votre premier blog en PHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "devjuju",
+            "email": "jleleubellpro1994@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

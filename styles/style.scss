@@ -1,0 +1,29 @@
+@import "./utils/variables";
+
+@import "./base/base";
+@import "./base/typography";
+
+
+@import "./layout/aside";
+@import "./layout/columns";
+
+@import "./layout/footer";
+@import "./layout/main";
+@import "./layout/navbar";
+@import "./layout/sections";
+@import "./layout/menu";
+
+
+@import "./components/badges";
+@import "./components/breadcrumb";
+@import "./components/buttons";
+@import "./components/cards";
+@import "./components/form";
+@import "./components/icones";
+@import "./components/images";
+@import "./components/offcanvas";
+@import "./components/separateurs";
+@import "./components/spacing";
+
+@import "./pages/contact";
+@import "./pages/dashboard";

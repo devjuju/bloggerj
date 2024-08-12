@@ -1,0 +1,66 @@
+/* aside */
+
+/* listes des articles */
+
+
+.liste-title-blog{
+    font-family: $font-family;
+    font-size: 18px;
+    color: $colour-title;
+    font-weight: $font-bold;
+    &:hover{
+        color: $colour-primary; 
+    }
+}
+
+.liste-category-blog{
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    margin: 5px;
+    font-family: $font-family;
+    font-size: 18px;
+    color: $colour-title;
+    font-weight: $font-medium;
+    background-color: rgba(250, 235, 215, 0);
+    &:hover{
+        color: $colour-primary; 
+    }
+    &.active{
+        color: $colour-secondary; 
+        font-weight: $font-bold;
+    }
+}
+
+
+/* aside mon compte */
+
+
+.list-group-item {
+    box-shadow: $box-shadow-aside;
+    font-size: 18px;
+    position: relative;
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    background-color: $colour-body;
+    border-radius: 8px;
+    margin: 10px;
+    border: $colour-none;
+    &:hover{
+        background-color: $colour-secondary;
+        color:$colour-body ;
+    }
+    &.active{
+        color: $colour-body;
+        background-color:$colour-primary;
+        border-color: $colour-primary;
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 18px;
+     
+    }
+}
+
+
