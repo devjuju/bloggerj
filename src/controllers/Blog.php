@@ -7,6 +7,6 @@ class Blog
 {
     public function blog()
     {   
-        require('views/blog.php');
+        require('../templates/frontend/blog/index.php');
     }
 }

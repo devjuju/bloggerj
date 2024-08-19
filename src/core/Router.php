@@ -4,26 +4,6 @@ namespace App\Core;
 use App\Controllers\Account;
 use App\Controllers\AccountSecurity;
 use App\Controllers\Admin;
-use App\Controllers\Apps;
-use App\Controllers\Websites;
-
-require_once('src/core/request.php');
-
-require_once('src/controllers/home.php');
-require_once('src/controllers/blog.php');
-require_once('src/controllers/contact.php');
-
-require_once('src/controllers/apps.php');
-require_once('src/controllers/websites.php');
-require_once('src/controllers/posts.php');
-require_once('src/controllers/post.php');
-
-require_once('src/controllers/login.php');
-require_once('src/controllers/register.php');
-
-require_once('src/controllers/accountsecurity.php');
-require_once('src/controllers/account.php');
-require_once('src/controllers/admin.php');
 
 use App\Controllers\Blog;
 use App\Controllers\Contact;
@@ -35,7 +15,7 @@ use App\Controllers\Posts;
 
 use App\Controllers\Register;
 use App\Core\Request;
-use App\Core\Exception;
+
 
 /* Utilisation de la condition switch pour optimiser le code */
 class Router
@@ -96,16 +76,6 @@ class Router
                         break;
 
 
-                        case 'websites':
-                            $websites = new Websites;
-                            $websites->websites();
-                            break;
-
-                        case 'apps':
-                            $apps = new Apps;
-                            $apps->applications();
-                            break;
-
                         case 'admin':
                             $admin = new Admin;
                             $admin->admin();
@@ -124,8 +94,8 @@ class Router
                 $home->home();
             }
         } catch(\Exception $e) {
-            $errorMsg = $e->getMessage();
-            require('views/errors.php');
+            $errorMessage = $e->getMessage();
+            require('../templates/error.php');
         }
     }
 }

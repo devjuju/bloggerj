@@ -2,9 +2,6 @@
 
 namespace App\Controllers;
 
-
-
-
 class Home
 {
 
@@ -13,7 +10,7 @@ class Home
     {   
     
 
-        require('views/home.php');
+        require('../templates/frontend/home/index.php');
     }
 
 

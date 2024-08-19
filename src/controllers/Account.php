@@ -6,6 +6,6 @@ class Account
 {
     public function account()
     {
-        require('views/account.php');
+        require('../templates/frontend/account/index.php');
     }
 }

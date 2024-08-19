@@ -1,5 +1,5 @@
 <!-- User logged in state. User account dropdown -->
-<header class="navbar navbar-expand-lg">
+<header class="navbar navbar-expand-lg bg-light-subtle">
   <div class="container">
     <a href="index.php?action=home" class="navbar-brand">
     <img src="images/logo.png" width="47" alt="Blogger">
@@ -11,9 +11,9 @@
     <div class="nav dropdown d-block order-lg-3 ms-4">
    
     <div class="d-flex align-items-center"> 
-      <img src="images/user.png" class="rounded-circle" width="48" alt="Avatar">
+      <img src="images/profil-user-img.svg" class="rounded-circle" width="48" alt="Avatar">
       <div class="ps-3"> 
-        <a href="index.php?action=login" class="btn btn-primary text-decoration-none">
+        <a href="index.php?action=login" class="btn btn-outline-primary">
          Se connecter
         </a>
       </div>

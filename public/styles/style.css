@@ -1,0 +1,1250 @@
+@charset "UTF-8";
+/* Couleurs globales */
+/* Couleurs utiles */
+/* Ombres */
+/* Polices princiaples */
+/* Backgrounds */
+.bg-primary {
+  --bs-bg-opacity: 1;
+  background-color: #986df8 !important;
+}
+
+.bg-primary-subtle {
+  background-color: #dccdff !important;
+}
+
+.bg-secondary {
+  --bs-bg-opacity: 1;
+  background-color: #fc7629 !important;
+}
+
+.bg-secondary-subtle {
+  background-color: #ffe5da !important;
+}
+
+.bg-success {
+  --bs-bg-opacity: 1;
+  background-color: #22D489 !important;
+}
+
+.bg-success-subtle {
+  background-color: #e4fff4 !important;
+}
+
+.bg-danger {
+  --bs-bg-opacity: 1;
+  background-color: #DE506E !important;
+}
+
+.bg-danger-subtle {
+  background-color: #ffeff3 !important;
+}
+
+.bg-warning {
+  --bs-bg-opacity: 1;
+  background-color: #F2B45A !important;
+}
+
+.bg-warning-subtle {
+  background-color: #fff8dd !important;
+}
+
+.bg-info {
+  --bs-bg-opacity: 1;
+  background-color: #986df8 !important;
+}
+
+.bg-info-subtle {
+  background-color: #dccdff !important;
+}
+
+.bg-light {
+  --bs-bg-opacity: 1;
+  background-color: #FFCAAD !important;
+}
+
+.bg-light-subtle {
+  background-color: #FDF6F0 !important;
+}
+
+.bg-dark {
+  --bs-bg-opacity: 1;
+  background-color: #19154B !important;
+}
+
+.bg-primary-subtle {
+  background-color: #c2bfe5 !important;
+}
+
+/* colors */
+.text-primary {
+  --bs-text-opacity: 1;
+  color: #986df8 !important;
+}
+
+.text-secondary {
+  --bs-text-opacity: 1;
+  color: #fc7629 !important;
+}
+
+.text-success {
+  --bs-text-opacity: 1;
+  color: #22D489 !important;
+}
+
+.text-danger {
+  --bs-text-opacity: 1;
+  color: #DE506E !important;
+}
+
+.text-warning {
+  --bs-text-opacity: 1;
+  color: #F2B45A !important;
+}
+
+.text-info {
+  --bs-text-opacity: 1;
+  color: #986df8 !important;
+}
+
+.text-light {
+  --bs-text-opacity: 1;
+  color: #FFCAAD !important;
+}
+
+.text-dark {
+  --bs-text-opacity: 1;
+  color: #19154B !important;
+}
+
+.text-body {
+  --bs-text-opacity: 1;
+  color: white !important;
+}
+
+.text-muted {
+  --bs-text-opacity: 1;
+  color: #5b5a67 !important;
+}
+
+.text-white {
+  --bs-text-opacity: 1;
+  color: white !important;
+}
+
+/* Spacing */
+/* utiliser sur la colonne */
+.spacing-col-padding-top-100 {
+  padding-top: 100px;
+}
+
+.spacing-col-padding-bottom-100 {
+  padding-bottom: 100px;
+}
+
+.spacing-col-padding-top-50 {
+  padding-top: 50px;
+}
+
+.spacing-col-padding-bottom-50 {
+  padding-bottom: 50px;
+}
+
+/* utiliser sur une div content */
+.spacing-content-padding-top-40 {
+  padding-top: 40px;
+}
+
+.spacing-content-padding-bottom-40 {
+  padding-bottom: 40px;
+}
+
+.spacing-content-marging-top-40 {
+  margin-top: 40px;
+}
+
+.spacing-content-marging-bottom-40 {
+  margin-bottom: 40px;
+}
+
+/* utiliser sur une div élément */
+.spacing-element-marging-top-20 {
+  margin-top: 20px;
+}
+
+.spacing-element-marging-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.spacing-element-marging-right-10 {
+  margin-right: 10px;
+}
+
+/* base */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  padding: 0;
+}
+
+/* typography */
+.heading-home {
+  font-family: "Mulish", sans-serif;
+  font-size: 66px;
+  color: #19154B;
+  font-weight: 700;
+  line-height: 1.1em;
+}
+
+.running-text {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 16px;
+  color: #5b5a67;
+  font-weight: 400;
+}
+
+.highlighted-text {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  color: #5b5a67;
+  font-weight: 500;
+}
+
+.titre-page {
+  font-family: "Mulish", sans-serif;
+  font-size: 56px;
+  color: #19154B;
+  font-weight: 700;
+  line-height: 1.1em;
+}
+
+.titre-section {
+  font-family: "Mulish", sans-serif;
+  font-size: 46px;
+  color: #19154B;
+  font-weight: 700;
+  line-height: 1.1em;
+}
+
+.titre-h3 {
+  font-family: "Mulish", sans-serif;
+  font-size: 26px;
+  color: #19154B;
+  font-weight: 700;
+}
+
+.titre-h4 {
+  font-family: "Mulish", sans-serif;
+  font-size: 26px;
+  color: #19154B;
+  font-weight: 700;
+}
+
+.titre-h5 {
+  font-family: "Mulish", sans-serif;
+  font-size: 24px;
+  color: #19154B;
+  font-weight: 700;
+}
+
+.titre-h6 {
+  font-family: "Mulish", sans-serif;
+  font-size: 18px;
+  color: #19154B;
+  font-weight: 700;
+}
+
+.color-link-primary {
+  color: #986df8;
+  text-decoration: none;
+  font-weight: 500;
+}
+.color-link-primary:hover {
+  text-decoration: underline;
+}
+
+.text-category {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 16px;
+  color: #986df8;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Navbar */
+/* frontend */
+.navbar .navbar-brand {
+  color: #19154B;
+  font-family: "Baloo Thambi 2", system-ui;
+  font-size: 38px;
+  padding-right: 20px;
+}
+.navbar .navbar-brand:hover {
+  color: #986df8;
+}
+.navbar .navigation {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.navbar .navigation .nav-link {
+  color: #19154B;
+  font-family: "Mulish", sans-serif;
+  font-size: 18px;
+}
+.navbar .navigation .nav-link:hover {
+  color: #986df8;
+}
+
+/* footer */
+.footer {
+  padding-top: 100px;
+  padding-bottom: 40px;
+  color: white;
+}
+.footer .colonne-1 span {
+  font-family: "Baloo Thambi 2", system-ui;
+  font-size: 40px;
+}
+.footer .colonne-1 span:hover {
+  color: #986df8;
+}
+.footer .colonne-1 p {
+  font-family: "Mulish", sans-serif;
+  margin-top: 20px;
+  color: white;
+}
+.footer .colonne-2 {
+  padding-top: 70px;
+  padding-left: 150px;
+  font-family: "Mulish", sans-serif;
+}
+.footer .colonne-2 .list-group-item {
+  box-shadow: 1px 1px 22px rgba(165, 62, 3, 0.1);
+  font-size: 18px;
+  position: relative;
+  display: block;
+  color: white;
+  padding: 0;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 0;
+  margin-bottom: 2px;
+  border: rgba(255, 255, 255, 0);
+}
+.footer .colonne-2 .list-group-item i {
+  color: #fc7629;
+}
+.footer .colonne-2 .list-group-item a {
+  color: white;
+}
+.footer .colonne-2 .list-group-item a:hover {
+  color: #fc7629;
+  text-decoration: underline;
+}
+.footer .colonne-3 {
+  font-family: "Mulish", sans-serif;
+  padding-top: 70px;
+}
+.footer .colonne-3 .form-label {
+  font-size: 18px;
+}
+.footer .nav {
+  font-family: "Mulish", sans-serif;
+  color: white;
+}
+.footer .nav a {
+  color: #fc7629;
+}
+.footer .nav a:hover {
+  color: #986df8;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+.breadcrumb .breadcrumb-link {
+  color: #fc7629;
+}
+.breadcrumb .breadcrumb-link:hover {
+  color: #986df8;
+}
+.breadcrumb .breadcrumb-links {
+  color: #19154B;
+}
+.breadcrumb .breadcrumb-links:hover {
+  color: #986df8;
+}
+.breadcrumb .breadcrumb-item.active {
+  color: #986df8;
+}
+.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  float: left;
+  padding-right: var(--bs-breadcrumb-item-padding-x);
+  color: #986df8;
+  font-weight: 500;
+  font-size: 20px;
+  content: var(--bs-breadcrumb-divider, "<");
+}
+
+/* buttons */
+.btn-primary {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background: #986df8;
+  border: 1px solid #986df8;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  color: white;
+  background: #8651fa;
+  border: 1px solid #8651fa;
+}
+
+.btn-secondary {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background: #fc7629;
+  border: 1px solid #fc7629;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  color: white;
+  background: #d65a11;
+  border: 1px solid #d65a11;
+}
+
+.btn-success {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background: #22D489;
+  border: 1px solid #22D489;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-success:hover {
+  color: white;
+  background: #19b674;
+  border: 1px solid #19b674;
+}
+
+.btn-danger {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background: #DE506E;
+  border: 1px solid #DE506E;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-danger:hover {
+  color: white;
+  background: #d9214e;
+  border: 1px solid #d9214e;
+}
+
+.btn-warning {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background: #F2B45A;
+  border: 1px solid #F2B45A;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-warning:hover {
+  color: white;
+  background: #f1bc00;
+  border: 1px solid #f1bc00;
+}
+
+.btn-dark {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background: #19154B;
+  border: 1px solid #19154B;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-dark:hover {
+  color: white;
+  background: #110e30;
+  border: 1px solid #110e30;
+}
+
+.btn-white {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #19154B;
+  background: white;
+  border: 1px solid white;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-white:hover {
+  color: white;
+  background: #19154B;
+  border: 1px solid #19154B;
+}
+
+.btn-light {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #19154B;
+  background: #FDF6F0;
+  border: 1px solid #FDF6F0;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-light:hover {
+  color: #19154B;
+  background: #FAE6DB;
+  border: 1px solid #FAE6DB;
+}
+
+.btn-info {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background: #986df8;
+  border: 1px solid #986df8;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-info:hover {
+  color: white;
+  background: #8651fa;
+  border: 1px solid #8651fa;
+}
+
+.btn-light-primary {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #986df8;
+  background: #dccdff;
+  border: 1px solid #dccdff;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-light-primary:hover {
+  color: white;
+  background: #986df8;
+  border: 1px solid #986df8;
+}
+
+.btn-light-secondary {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fc7629;
+  background: #ffe5da;
+  border: 1px solid #ffe5da;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-light-secondary:hover {
+  color: white;
+  background: #fc7629;
+  border: 1px solid #fc7629;
+}
+
+.btn-light-success {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #22D489;
+  background: #e4fff4;
+  border: 1px solid #e4fff4;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-light-success:hover {
+  color: white;
+  background: #22D489;
+  border: 1px solid #22D489;
+}
+
+.btn-light-danger {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #DE506E;
+  background: #ffeff3;
+  border: 1px solid #ffeff3;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-light-danger:hover {
+  color: white;
+  background: #DE506E;
+  border: 1px solid #DE506E;
+}
+
+.btn-light-warning {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #F2B45A;
+  background: #fff8dd;
+  border: 1px solid #fff8dd;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-light-warning:hover {
+  color: white;
+  background: #F2B45A;
+  border: 1px solid #F2B45A;
+}
+
+.btn-light-dark {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #19154B;
+  background: #c2bfe5;
+  border: 1px solid #c2bfe5;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-light-dark:hover {
+  color: white;
+  background: #19154B;
+  border: 1px solid #19154B;
+}
+
+.btn-light-info {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #986df8;
+  background: #dccdff;
+  border: 1px solid #dccdff;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-light-info:hover {
+  color: white;
+  background: #986df8;
+  border: 1px solid #986df8;
+}
+
+.btn-outline-primary {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #986df8;
+  background: white;
+  border: 1px solid #986df8;
+  border-radius: 24px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-outline-primary:hover {
+  color: white;
+  background: #986df8;
+  border: 1px solid #986df8;
+}
+
+.btn-outline-secondary {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fc7629;
+  background: white;
+  border: 1px solid #fc7629;
+  border-radius: 24px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-outline-secondary:hover {
+  color: white;
+  background: #fc7629;
+  border: 1px solid #fc7629;
+}
+
+.btn-outline-success {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #22D489;
+  background: white;
+  border: 1px solid #22D489;
+  border-radius: 24px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-outline-success:hover {
+  color: white;
+  background: #22D489;
+  border: 1px solid #22D489;
+}
+
+.btn-outline-danger {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #DE506E;
+  background: white;
+  border: 1px solid #DE506E;
+  border-radius: 24px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-outline-danger:hover {
+  color: white;
+  background: #DE506E;
+  border: 1px solid #DE506E;
+}
+
+.btn-outline-warning {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #F2B45A;
+  background: white;
+  border: 1px solid #F2B45A;
+  border-radius: 24px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-outline-warning:hover {
+  color: white;
+  background: #F2B45A;
+  border: 1px solid #F2B45A;
+}
+
+.btn-outline-dark {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #19154B;
+  background: white;
+  border: 1px solid #19154B;
+  border-radius: 24px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-outline-dark:hover {
+  color: white;
+  background: #110e30;
+  border: 1px solid #110e30;
+}
+
+.btn-outline-white {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid white;
+  border-radius: 24px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-outline-white:hover {
+  color: #19154B;
+  background: white;
+  border: 1px solid white;
+}
+
+.btn-outline-light {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FDF6F0;
+  background: white;
+  border: 1px solid #FDF6F0;
+  border-radius: 24px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-outline-light:hover {
+  color: #fc7629;
+  background: #FDF6F0;
+  border: 1px solid #FDF6F0;
+}
+
+.btn-outline-info {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #986df8;
+  background: white;
+  border: 1px solid #986df8;
+  border-radius: 24px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.btn-outline-info:hover {
+  color: white;
+  background: #986df8;
+  border: 1px solid #986df8;
+}
+
+.btn-icon-secondary {
+  background-color: #fc7629;
+  padding-top: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  margin-right: 8px;
+}
+.btn-icon-secondary i {
+  color: white;
+}
+.btn-icon-secondary:hover {
+  background-color: #986df8;
+}
+
+/* Forms */
+.form-group-style input[type=text] {
+  width: 100%;
+  padding: 0.825rem 1rem;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: white;
+  color: #986df8;
+  border: 1px solid #ebebeb;
+  border-radius: 1rem;
+  outline-color: #986df8;
+}
+.form-group-style input[type=email] {
+  width: 100%;
+  padding: 0.825rem 1rem;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: white;
+  color: #986df8;
+  border: 1px solid #ebebeb;
+  border-radius: 1rem;
+  outline-color: #986df8;
+}
+.form-group-style input[type=password] {
+  width: 100%;
+  padding: 0.825rem 1rem;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: white;
+  color: #986df8;
+  border: 1px solid #ebebeb;
+  border-radius: 1rem;
+  outline-color: #986df8;
+  /* The container */
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* On mouse-over, add a grey background color */
+  /* When the checkbox is checked, add a blue background */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
+}
+.form-group-style input[type=password] .label-checker-lui {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.form-group-style input[type=password] .label-checker-lui input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.form-group-style input[type=password] .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 8px;
+  background-color: #eee;
+}
+.form-group-style input[type=password] .label-checker-lui:hover input ~ .checkmark {
+  background-color: #ccc;
+  border-radius: 8px;
+}
+.form-group-style input[type=password] .label-checker-lui input:checked ~ .checkmark {
+  background-color: #986df8;
+  border-radius: 8px;
+}
+.form-group-style input[type=password] .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.form-group-style input[type=password] .label-checker-lui input:checked ~ .checkmark:after {
+  display: block;
+}
+.form-group-style input[type=password] .label-checker-lui .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.form-group-style textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 1px solid #ebebeb;
+  border-radius: 16px;
+  color: #986df8;
+  background-color: white;
+  font-size: 16px;
+  resize: none;
+  outline-color: #986df8;
+}
+.form-group-style p {
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  color: #d60000;
+}
+.form-group-style p i {
+  margin-right: 3px;
+}
+
+/* card */
+.card-shadow {
+  border: 0;
+  border-radius: 27px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  margin-bottom: 50px;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 30px;
+}
+.card-shadow .card-header {
+  margin-bottom: 50px;
+}
+
+.card-shadow-contact {
+  border: 0;
+  border-radius: 27px;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.card-background {
+  border: 0;
+  border-radius: 27px;
+  margin-bottom: 50px;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 30px;
+  background-color: #FDF6F0;
+}
+
+.card-article .card-body {
+  padding: 0;
+}
+.card-article .card-body .category-blog {
+  margin-right: 20px;
+  color: #986df8;
+}
+.card-article .card-body .category {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.card-article .card-body .card-post-title {
+  font-family: "Mulish", sans-serif;
+  font-size: 22px;
+  color: #19154B;
+  font-weight: 700;
+  text-decoration: none;
+}
+.card-article .card-body .card-post-title:hover {
+  color: #986df8;
+}
+.card-article .card-body .meta-content-blog {
+  margin-right: 20px;
+  color: #a09fac;
+}
+
+/* icons */
+.box-icon {
+  background-color: #ffe5da;
+  border-radius: 20px;
+  padding: 15px;
+}
+.box-icon i {
+  font-size: 36px;
+  color: #fc7629;
+}
+
+.meta-list-blog {
+  margin-right: 20px;
+}
+.meta-list-blog i {
+  color: #fc7629;
+}
+.meta-list-blog span {
+  color: #5b5a67;
+}
+
+/* list group */
+.blog-postlist-content {
+  text-decoration: none;
+}
+.blog-postlist-content .blog-postlist-title {
+  font-family: "Mulish", sans-serif;
+  font-size: 18px;
+  color: #19154B;
+  font-weight: 700;
+}
+.blog-postlist-content .blog-postlist-intro {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 16px;
+  color: #5b5a67;
+  font-weight: 500;
+}
+.blog-postlist-content .meta-lists {
+  font-family: "Hind Siliguri", sans-serif;
+  color: #79829B;
+  font-weight: 400;
+}
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding-left: 0px;
+  color: #5b5a67;
+  text-decoration: none;
+  background-color: var(--bs-list-group-bg);
+  border: 0px solid rgba(255, 255, 255, 0);
+}
+
+.list-group-flush .list-group-item {
+  position: relative;
+  display: block;
+  padding-left: 0px;
+  color: #19154B;
+  text-decoration: none;
+  background-color: white;
+  border: 0px solid white;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+}
+.list-group-flush .list-group-item .box-icon-account {
+  margin-right: 20px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  border: 1px solid #ffe5da;
+  background-color: #ffe5da;
+}
+.list-group-flush .list-group-item .box-icon-account i {
+  font-size: 18px;
+  color: #fc7629;
+}
+.list-group-flush .list-group-item:hover {
+  color: #fc7629;
+  background-color: #ffe5da;
+  border: 0px solid #ffe5da;
+}
+.list-group-flush .list-group-item-action {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
+  margin-bottom: 15px;
+  border: 0;
+  border-radius: 0.5rem;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-bottom: 16px;
+}
+.list-group-flush .list-group-item.active {
+  z-index: 2;
+  color: white;
+  background-color: #986df8;
+  border-color: #986df8;
+  box-shadow: rgba(231, 111, 13, 0.2) 0px 7px 29px 0px;
+  font-weight: 500;
+}
+.list-group-flush .list-group-item.active .box-icon-account {
+  margin-right: 20px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  border: 1px solid white;
+  background-color: white;
+}
+.list-group-flush .list-group-item.active .box-icon-account i {
+  font-size: 18px;
+  color: #986df8;
+}
+.list-group-flush .list-group-item.exit-account {
+  z-index: 2;
+  color: #19154B;
+  background-color: rgba(255, 255, 255, 0);
+  border-color: #986df8;
+  box-shadow: none;
+  font-weight: 500;
+}
+.list-group-flush .list-group-item.exit-account .box-icon-account {
+  margin-right: 20px;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  border-radius: 0;
+  border: 0px solid white;
+  background-color: rgba(255, 255, 255, 0);
+}
+.list-group-flush .list-group-item.exit-account .box-icon-account i {
+  font-size: 18px;
+  font-weight: 700;
+  color: #986df8;
+}
+.list-group-flush .list-group-item.exit-account:hover {
+  color: #986df8;
+}/*# sourceMappingURL=style.css.map */

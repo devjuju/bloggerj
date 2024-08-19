@@ -7,6 +7,6 @@ class Error404
     public function error404()
     {
         
-        require('views/404.php');
+        require('../templates/404.php');
     }
 }

@@ -1,6 +1,5 @@
 <?php
-namespace App\Models;
-require_once('src/model/model.php');
+namespace App\Model;
 class PostModels extends Model{
     protected $id;
     protected $user_id;

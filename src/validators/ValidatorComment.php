@@ -2,7 +2,7 @@
 
 namespace App\Validators;
 
-require_once('src/core/validator.php');
+
 use App\Core\Validator;
 
 class ValidatorComment extends Validator

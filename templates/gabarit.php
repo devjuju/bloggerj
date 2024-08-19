@@ -26,14 +26,14 @@
   </head>
   <body>
      <!-- inclusion de l'entête du site -->
-     <?php require('navbar.php') ?>
-     
+     <?php require('../templates/navbar.php') ?>
+    
  
 
     <?= $content ?>
 
 
-    <?php require('footer.php') ?>
+    <?php require('../templates/footer.php') ?>
 
 
     <!-- Custom scripts for this template -->

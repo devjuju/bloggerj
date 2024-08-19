@@ -10,6 +10,6 @@ class Post
     {
      
 
-        require('views/post.php');
+        require('../templates/frontend/post/index.php');
     }
 }

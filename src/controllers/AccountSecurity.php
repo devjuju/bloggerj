@@ -6,6 +6,6 @@ class AccountSecurity
 {
     public function accountSecurity()
     {
-        require('views/accountsecurity.php');
+        require('../templates/frontend/accountsecurity/index.php');
     }
 }

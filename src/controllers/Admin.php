@@ -6,6 +6,6 @@ class Admin
 {
     public function admin()
     {
-        require('views/admin.php');
+        require('../templates/backend/admin/index.php');
     }
 }

@@ -3,7 +3,6 @@
 namespace App\Validators;
 
 use App\Core\Validator;
-require_once('src/core/validator.php');
 
 class ValidatorContact extends Validator
 {

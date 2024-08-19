@@ -3,24 +3,14 @@
 namespace App\Controllers;
 use App\Core\Request;
 use App\Forms\FormRegister;
-use App\Models\UsersModels;
+use App\Model\UsersModels;
 
-
-require_once('src/core/request.php');
-require_once('src/forms/formregister.php');
-require_once('src/model/usersmodels.php');
-
-
-require_once('src/model/model.php');
-require_once('src/core/db.php');
 
 
 class Register
 {
     public function register()
-    {   $users = new UsersModels();
-       $test = $users->findAll();
-        print_r($test);
+    {  
 
         $request = new Request();
         $submit = $request->post('register');
@@ -30,12 +20,32 @@ class Register
             $register = new UsersModels($request->post('register'));
             $formRegister = new FormRegister($register);
             $controle = $formRegister->validate();
+
+            if($controle){
+
+                
+            
+
+                 $password = $request->post('password');
+
+                $register->setRole('visitor');
+                $register->setAvatar('avatar.png');
+                        
+             
+                 // On chiffre le mot de passe
+                 $password = password_hash($request->post('password'), PASSWORD_DEFAULT);
+
+               
+                // On stocke l'utilisateur
+                $register->create();
+                
+            }
              
           
             
         }
        
       
-        require('views/register.php');
+        require('../templates/frontend/register/index.php');
     }
 }

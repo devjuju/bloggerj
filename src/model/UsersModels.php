@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Models;
+namespace App\Model;
 
-require_once('src/model/model.php');
+use App\Model\Model;
 
 class UsersModels extends Model
 {  
     
-    private $id;
-    private $role;
-    private $username;
-    private $lastname;
-    private $firstname;
-    private $email;
-    private $password;
+    protected $id;
+    protected $role;
+    protected $avatar;
+    protected $username;
+    protected $lastname;
+    protected $firstname;
+    protected $email;
+    protected $password;
 
     
 
@@ -23,6 +24,7 @@ class UsersModels extends Model
         $this->table = 'users';
             
         $this->setId($data['id']?? null);
+        $this->setAvatar($data['avatar']?? null);
         $this->setUsername($data['username']?? null);
         $this->setLastname($data['lastname']?? null);
         $this->setFirstname($data['firstname']?? null);
@@ -39,6 +41,16 @@ class UsersModels extends Model
     public function setId($id)
     {
         $this->id = $id;
+    }
+    
+    public function getAvatar()
+    {
+        return $this->avatar;
+    }
+
+    public function setAvatar($avatar)
+    {
+        $this->avatar = $avatar;
     }
     
     public function getUsername()

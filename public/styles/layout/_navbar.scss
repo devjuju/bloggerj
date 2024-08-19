@@ -1,0 +1,27 @@
+/* Navbar */
+
+/* frontend */
+.navbar {
+    .navbar-brand {
+      color: $colour-title;
+      font-family: $font-logo;
+      font-size: 38px;
+      padding-right: 20px;
+      &:hover{
+        color: $colour-primary;
+      }
+    }
+    .navigation{
+        padding-left: 10px;
+        padding-right: 10px;
+        .nav-link{
+            color: $colour-title;
+            font-family: $font-title;
+            font-size: 18px;
+            
+            &:hover{
+                color: $colour-primary;
+            }
+        }
+    }
+}

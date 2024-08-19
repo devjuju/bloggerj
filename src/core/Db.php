@@ -14,7 +14,7 @@ class Db extends PDO
     // Informations de connexion
     private const DBHOST = 'localhost';
     private const DBUSER = 'root';
-    private const DBPASS = 'root';
+    private const DBPASS = 'Mypass8035macarm';
     private const DBNAME = 'bloggerj';
 
     private function __construct()

@@ -1,0 +1,27 @@
+/* icons */
+
+.box-icon{
+    background-color: $colour-light-secondary;
+    border-radius: 20px;
+    padding: 15px;
+    & i{
+        font-size: 36px;
+        color: $colour-secondary;
+    }
+}
+
+
+
+.meta-list-blog{
+
+    margin-right: 20px;
+
+    & i{
+        color: $colour-secondary;
+    }
+
+    & span{
+        color: $colour-text; 
+    }
+}
+

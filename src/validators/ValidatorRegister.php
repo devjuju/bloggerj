@@ -7,9 +7,12 @@ use App\Core\Validator;
 class ValidatorRegister extends Validator
 {
     public $data;
+
+
     public function __construct($data)
     {
         $this->data = $data;
+       
     }
 
     public function checkData()
@@ -42,7 +45,7 @@ class ValidatorRegister extends Validator
     public function checkUsername($username)
     {
         if(empty($username)) {
-            return "Entrer votre prénom";
+            return "Entrer votre pseudo";
         } elseif ($this->isSmallThan($username, 5)) {
             return "c'est plus petit que 5 caractères";
         }else {
@@ -99,12 +102,9 @@ class ValidatorRegister extends Validator
         }
     }
 
-    public function checkConfirmPassword($confirm_password)
-    {
-        if(empty($confirm_password)) {
-            return "Il faut répéter le mot de passe";
-        }else {
-            return true;
-        }
-    }
+
+
+
+
+
 }

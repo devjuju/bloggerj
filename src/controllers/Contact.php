@@ -3,13 +3,7 @@
 namespace App\Controllers;
 use App\Core\Request;
 use App\Forms\FormContact;
-
-use App\Models\ContactModels;
-
-
-require_once('src/core/request.php');
-require_once('src/forms/formcontact.php');
-require_once('src/model/contactmodels.php');
+use App\Model\ContactModels;
 
 
 
@@ -29,7 +23,7 @@ class Contact
         }
         
 
-        require('views/contact.php');
+        require('../templates/frontend/contact/index.php');
     }
 
 }

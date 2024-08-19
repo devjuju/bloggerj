@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Models;
+namespace App\Model;
 
-require_once('src/core/db.php');
 use App\Core\Db;
 class Model extends Db
 {
