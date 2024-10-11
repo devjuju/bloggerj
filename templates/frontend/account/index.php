@@ -42,7 +42,7 @@
                 <div id="account-menu" class="list-group list-group-flush collapse d-md-block">
                   <a href="#" class="list-group-item list-group-item-action d-flex align-items-center active">
                   <div class="box-icon-account">
-                  <i class="bi bi-gear"></i>
+                  <i class="bi bi-person-fill"></i>
                 </div>
                     
                   Aperçu du compte
@@ -51,16 +51,16 @@
 
 
 
-                  <a href="index.php?action=accountsecurity" class="list-group-item list-group-item-action d-flex align-items-center ">
+                  <a href="index.php?action=accountsettings" class="list-group-item list-group-item-action d-flex align-items-center ">
                   <div class="box-icon-account">
-                  <i class="bi bi-gear"></i>
+                  <i class="bi bi-gear-fill"></i>
                 </div>
                     
                   Réglages du compte
                   </a>
                   <a href="index.php?action=accountsecurity" class="list-group-item list-group-item-action d-flex align-items-center ">
                   <div class="box-icon-account">
-                  <i class="bi bi-gear"></i>
+                  <i class="bi bi-lock-fill"></i>
                 </div>
                     
                   Sécurité du compte
@@ -94,10 +94,10 @@
           <div class="card-shadow py-3 p-sm-4 p-md-5">
                 <div class="card-header">
                 <div class="d-flex align-items-center mt-sm-n1 pb-4 mb-0 mb-lg-1 mb-xl-3">
-                  <i class="ai-user text-primary lead pe-1 me-2"></i>
+                  <i class="bi bi-person-fill text-primary lead pe-1 me-2"></i>
                   <h2 class="h4 mb-0">Informations personnelles</h2>
-                  <a class="btn btn-sm btn-secondary ms-auto" href="account-settings.html">
-                    <i class="ai-edit ms-n1 me-2"></i>
+                  <a class="btn btn-sm btn-secondary ms-auto" href="index.php?action=accountsettings">
+                    <i class="bi bi-pencil-fill ms-n1 me-2"></i>
                     Editer le profil
                   </a>
                 </div>
@@ -149,12 +149,7 @@
                   </div>
                 </div>
 
-                <div class="alert alert-info d-flex mb-0" role="alert">
-                  <i class="ai-circle-info fs-xl"></i>
-                  <div class="ps-2">Devenir rédacteur ou contributeur du blog ?<a class="alert-link ms-1" href="account-settings.html">Contacter l'administrateur</a></div>
-                </div>
-            
-
+               
                 
           
                 
@@ -203,70 +198,7 @@
               </div>
 
        
-          <div class="card border-light shadow-lg py-3 p-sm-4 p-md-5">
-          <div class="ps-md-3 ps-lg-0 mt-md-2 py-md-4">
-          <h3 class="fw-bold text-gray-900 display-6">Détails du compte</h3>
-                    <div class="text-muted fw-semibold fs-5">
-                        Devenir rédacteur ou contributeur du blog ?
-                        <a href="index.php?action=register" class="text-color-primary fw-bold">Contacter l'administrateur</a>
-                        
-                    </div>
-     <br> <br>
-
-              <!-- Basic info -->
-              <h2 class="h5 text-primary mb-4">Informations personnelles</h2>
-              <form class="needs-validation border-bottom pb-3 pb-lg-4" novalidate="">
-                <div class="row pb-2">
-                <div class="col-sm-12 mb-4">
-                  
-                  
-
-                  
-                    <label for="sn" class="form-label fs-base">Pseudo</label>
-                    <input type="text" id="sn" class="form-control form-control-lg" value="DoeJohn" required="">
-                    <div class="invalid-feedback">Please enter your pseudo!</div>
-                  </div>
-                  <div class="col-sm-6 mb-4">
-                    <label for="fn" class="form-label fs-base">Nom</label>
-                    <input type="text" id="fn" class="form-control form-control-lg" value="John" required="">
-                    <div class="invalid-feedback">Please enter your first name!</div>
-                  </div>
-                  <div class="col-sm-6 mb-4">
-                    <label for="sn" class="form-label fs-base">Prénom</label>
-                    <input type="text" id="sn" class="form-control form-control-lg" value="Doe" required="">
-                    <div class="invalid-feedback">Please enter your second name!</div>
-                  </div>
-                
-                  <div class="col-sm-6 mb-4">
-                    <label for="email" class="form-label fs-base">Email</label>
-                    <input type="email" id="email" class="form-control form-control-lg" value="jonny@email.com" required="">
-                    <div class="invalid-feedback">Please provide a valid email address!</div>
-                  </div>
-                  <div class="col-sm-6 mb-4">
-                    <label for="phone" class="form-label fs-base">Téléphone <small class="text-muted">(optional)</small></label>
-                    <input type="text" id="phone" class="form-control form-control-lg" data-format="{&quot;numericOnly&quot;: true, &quot;delimiters&quot;: [&quot;+1 &quot;, &quot; &quot;, &quot; &quot;], &quot;blocks&quot;: [0, 3, 3, 2]}" placeholder="+1 ___ ___ __">
-                  </div>
- 
-                </div>
-                <div class="d-flex mb-3">
-                  <button type="reset" class="btn btn-secondary me-3">Annuler</button>
-                  <button type="submit" class="btn btn-primary">Changer</button>
-                </div>
-              </form>
-
-           
-              
-
-              <!-- Delete account -->
-              <h2 class="h5 text-primary pt-1 pt-lg-3 mt-4">Supprimer votre compte</h2>
-              <p>Lorsque vous supprimez votre compte, votre profil public sera immédiatement désactivé. </p>
-              <div class="form-check mb-4">
-                <input type="checkbox" id="delete-account" class="form-check-input">
-                <label for="delete-account" class="form-check-label fs-base">Oui, je veux supprimer mon compte</label>
-              </div>
-              <button type="button" class="btn btn-danger">Supprimer</button>
-            </div>
-          </div>
+      
           
           </div>
         </div>

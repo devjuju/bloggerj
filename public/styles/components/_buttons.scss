@@ -14,6 +14,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-hover-primary;
@@ -35,6 +36,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-hover-secondary;
@@ -56,6 +58,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-hover-success;
@@ -77,6 +80,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-hover-danger;
@@ -98,6 +102,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-hover-warning;
@@ -119,6 +124,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-hover-title;
@@ -140,6 +146,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-title;
@@ -161,6 +168,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-title;
         background: $colour-background-secondary;
@@ -182,6 +190,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-hover-primary;
@@ -203,6 +212,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-primary;
@@ -224,6 +234,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-secondary;
@@ -245,6 +256,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-success;
@@ -266,6 +278,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-danger;
@@ -287,6 +300,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-warning;
@@ -308,6 +322,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-title;
@@ -329,6 +344,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-primary;
@@ -349,6 +365,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-primary;
@@ -369,6 +386,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-secondary;
@@ -389,6 +407,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-success;
@@ -409,6 +428,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-danger;
@@ -429,6 +449,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-warning;
@@ -449,6 +470,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-hover-title;
@@ -470,6 +492,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-title;
         background: $colour-body;
@@ -490,6 +513,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-secondary;
         background: $colour-background;
@@ -510,6 +534,7 @@
     padding-right: 28px;
     padding-bottom: 10px;
     cursor: pointer;
+
     &:hover {
         color: $colour-body;
         background: $colour-primary;
@@ -518,19 +543,203 @@
 }
 
 
-.btn-icon-secondary{
+.btn-icon-secondary {
     background-color: $colour-secondary;
     padding-top: 4px;
     padding-left: 8px;
     padding-right: 8px;
     padding-bottom: 4px;
     margin-right: 8px;
-    & i{
+
+    & i {
         color: $colour-body;
     }
 
-    &:hover{
+    &:hover {
         background-color: $colour-primary;
     }
 
+}
+
+.btn-icon-circle-secondary {
+    background-color: $colour-secondary;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 4px;
+    margin-right: 8px;
+    border-radius: 50%;
+
+    & i {
+        color: $colour-body;
+    }
+
+    &:hover {
+        background-color: $colour-primary;
+    }
+
+}
+
+.btn-icon-circle-primary {
+    background-color: $colour-primary;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 4px;
+    margin-right: 8px;
+    border-radius: 50%;
+
+    & i {
+        color: $colour-body;
+    }
+
+    &:hover {
+        background-color: $colour-secondary;
+    }
+
+}
+
+
+
+.btn.disabled,
+.btn:disabled,
+fieldset:disabled .btn {
+    color: $colour-body;
+    pointer-events: none;
+    background-color: $colour-primary;
+    border-color: $colour-primary;
+    opacity: 1;
+}
+
+
+.btn-link-light {
+    font-family: $font-text;
+    font-size: 18px;
+    font-weight: $font-medium;
+    color: $colour-body;
+    background: $colour-none;
+    border: 0px solid $colour-none;
+    border-radius: none;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+        color: $colour-secondary;
+        background: $colour-none;
+        border: 0px solid $colour-none;
+    }
+}
+
+
+.btn-icon-pencil-circle-secondary {
+    background-color: $colour-secondary;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    margin-right: 8px;
+    border-radius: 50%;
+
+    & i {
+        color: $colour-body;
+    }
+
+    &:hover {
+        background-color: $colour-primary;
+    }
+
+}
+
+.btn-icon-modal-primary {
+    font-family: $font-text;
+    font-size: 18px;
+    font-weight: $font-medium;
+    color: $colour-body;
+    background: $colour-primary;
+    border: 1px solid $colour-primary;
+    border-radius: 12px;
+    box-shadow: $box-shadow;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+
+    &:hover {
+        color: $colour-body;
+        background: $colour-hover-primary;
+        border: 1px solid $colour-hover-primary;
+    }
+}
+
+
+.btn-icon-modal-secondary {
+    font-family: $font-text;
+    font-size: 18px;
+    font-weight: $font-medium;
+    color: $colour-body;
+    background: $colour-secondary;
+    border: 1px solid $colour-secondary;
+    border-radius: 12px;
+    box-shadow: $box-shadow;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+
+    &:hover {
+        color: $colour-body;
+        background: $colour-hover-secondary;
+        border: 1px solid $colour-hover-secondary;
+    }
+}
+
+
+.btn-icon-modal-warning {
+    font-family: $font-text;
+    font-size: 18px;
+    font-weight: $font-medium;
+    color: $colour-body;
+    background: $colour-warning;
+    border: 1px solid $colour-warning;
+    border-radius: 12px;
+    box-shadow: $box-shadow;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+
+    &:hover {
+        color: $colour-body;
+        background: $colour-hover-warning;
+        border: 1px solid $colour-hover-warning;
+    }
+}
+
+.btn-icon-modal-light {
+    font-family: $font-text;
+    font-size: 18px;
+    font-weight: $font-medium;
+    color: $colour-body;
+    background: $colour-beige;
+    border: 1px solid $colour-beige;
+    border-radius: 12px;
+    box-shadow: $box-shadow;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+
+    &:hover {
+        color: $colour-body;
+        background: #E8AD8D;
+        border: 1px solid #E8AD8D;
+    }
 }

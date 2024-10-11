@@ -36,91 +36,50 @@
             border-radius: 1rem;
             outline-color: $colour-primary;
 
-
-    
-        /* The container */
-.label-checker-lui {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 16px;
-    
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-        /* Hide the browser's default checkbox */
-.label-checker-lui input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-
-
-  /* Create a custom checkbox */
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    border-radius: 8px;
-    background-color: #eee;
-  }
-
-
-  /* On mouse-over, add a grey background color */
-.label-checker-lui:hover input ~ .checkmark {
-    background-color: #ccc;
-    border-radius: 8px;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .label-checker-lui input:checked ~ .checkmark {
-    background-color: $colour-primary;
-    border-radius: 8px;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .label-checker-lui input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .label-checker-lui .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid $colour-body;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-  
-  
-
-        
-        
        
-
-       
+   
 
     }
+
+ 
+
+    input[type=file] {
+        width: 100%;
+        padding: .825rem 1rem;
+        box-sizing: border-box;
+        border-radius: 8px;
+        background-color: $colour-body;
+        color: $colour-primary;
+        border: 1px solid #ebebeb;
+        border-radius: 1rem;
+        outline-color: $colour-primary;
+     
+    
+    }
+    input::file-selector-button {
+
+        font-family: $font-text;
+        font-size: 18px;
+        font-weight: $font-medium;
+        color: $colour-body;
+        padding: 0.5em;
+        border: thin solid $colour-primary;
+        border-radius: 24px;
+        background: $colour-primary;
+        padding-top: 10px;
+        padding-left: 28px;
+        padding-right: 28px;
+        padding-bottom: 10px;
+        &:hover{
+            color: $colour-body;
+            background: $colour-hover-primary;
+            border: 1px solid $colour-hover-primary;
+        }
+      }
+      
+
+
+    
    
   
     
@@ -149,4 +108,10 @@
         }
         color:#d60000;;
     }
+
+    .form-check-input:checked {
+        background-color: $colour-primary;
+        border: 0px solid $colour-primary;
+    }
 }
+

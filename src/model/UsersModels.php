@@ -5,8 +5,8 @@ namespace App\Model;
 use App\Model\Model;
 
 class UsersModels extends Model
-{  
-    
+{
+
     protected $id;
     protected $role;
     protected $avatar;
@@ -16,22 +16,32 @@ class UsersModels extends Model
     protected $email;
     protected $password;
 
-    
+    protected $status;
+
+
 
     public function __construct($data = null)
-    {   
-       
+    {
+
         $this->table = 'users';
-            
-        $this->setId($data['id']?? null);
-        $this->setAvatar($data['avatar']?? null);
-        $this->setUsername($data['username']?? null);
-        $this->setLastname($data['lastname']?? null);
-        $this->setFirstname($data['firstname']?? null);
-        $this->setRole($data['role']?? null);
-        $this->setPassword($data['password']?? null);
-        $this->setEmail($data['email']?? null);
+
+        $this->setId($data['id'] ?? null);
+        $this->setAvatar($data['avatar'] ?? null);
+        $this->setUsername($data['username'] ?? 'null');
+        $this->setLastname($data['lastname'] ?? null);
+        $this->setFirstname($data['firstname'] ?? null);
+        $this->setRole($data['role'] ?? null);
+        $this->setPassword($data['password'] ?? null);
+        $this->setEmail($data['email'] ?? null);
+        $this->setStatus($data['status'] ?? null);
     }
+
+    public function findOneByEmail()
+    {
+        return $this->requete("SELECT * FROM {$this->table} WHERE email = ?", [$this->getEmail()])->fetch();
+    }
+
+
 
     public function getId()
     {
@@ -42,7 +52,7 @@ class UsersModels extends Model
     {
         $this->id = $id;
     }
-    
+
     public function getAvatar()
     {
         return $this->avatar;
@@ -52,7 +62,7 @@ class UsersModels extends Model
     {
         $this->avatar = $avatar;
     }
-    
+
     public function getUsername()
     {
         return $this->username;
@@ -74,7 +84,7 @@ class UsersModels extends Model
         $this->lastname = $lastname;
     }
 
-    
+
     public function getFirstname()
     {
         return $this->firstname;
@@ -110,22 +120,19 @@ class UsersModels extends Model
     {
         $this->password = $password;
     }
-    
+
     public function getPassword()
     {
         return $this->password;
     }
 
-    public function setSession()
+    public function setStatus($status)
     {
-        $_SESSION['user'] = [
-            'id' => $this->id,
-            'email' => $this->email,
-            'role' => $this->role
-        ];
+        $this->status = $status;
     }
 
-    
- 
-    
+    public function getStatus()
+    {
+        return $this->status;
+    }
 }

@@ -6,6 +6,6 @@ class Posts
 {
     public function posts()
     {   
-        require('../templates/frontend/posts/index.php');
+        require('../templates/backend/posts/index.php');
     }
 }

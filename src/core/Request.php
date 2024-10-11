@@ -7,6 +7,7 @@ class Request
     private $_post;
     private $_get;
 
+
     public function __construct()
     {
         $this->_post = $_POST;
@@ -27,7 +28,6 @@ class Request
         if (empty(filter_var(stripslashes($this->_get, $key), FILTER_SANITIZE_SPECIAL_CHARS))) {
             $this->checkGlobal($this->_get, $key);
         }
-
     }
     /* vérifier la requête en lui passant une clé */
     /* get['action'], dans le router */

@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\Core\Db;
+
 class Model extends Db
 {
     // Table de la base de données
@@ -14,8 +15,8 @@ class Model extends Db
 
     public function findAll()
     {
-       $query = $this->requete('SELECT * FROM ' . $this->table);
-      return $query->fetchAll();
+        $query = $this->requete('SELECT * FROM ' . $this->table);
+        return $query->fetchAll();
     }
 
 
@@ -83,7 +84,7 @@ class Model extends Db
                 $valeurs[] = $valeur;
             }
         }
-       // $valeurs[] = $this->id;
+        // $valeurs[] = $this->id;
 
         // On transforme le tableau "champs" en une chaine de caractères
         $liste_champs = implode(', ', $champs);
@@ -101,7 +102,7 @@ class Model extends Db
     public function requete(string $sql, array $attributs = null)
     {
         // On récupère l'instance de Db
-       $this->db = Db::getInstance();
+        $this->db = Db::getInstance();
 
         // On vérifie si on a des attributs
         if ($attributs !== null) {
@@ -130,12 +131,5 @@ class Model extends Db
             }
         }
         return $this;
-    }
-
-
-
-    public function findOneByEmail($email)
-    {
-        return $this->requete("SELECT * FROM {$this->table} WHERE email = ?", [$email])->fetch();
     }
 }

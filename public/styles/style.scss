@@ -3,7 +3,9 @@
 @import "./utils/colors";
 @import "./utils/spacing";
 @import "./base/base";
+@import "./base/images";
 @import "./base/typography";
+@import "./layout/main";
 @import "./layout/navbar";
 @import "./layout/footer";
 @import "./components/breadcrumb";
@@ -12,3 +14,5 @@
 @import "./components/cards";
 @import "./components/icons";
 @import "./components/listgroup";
+@import "./components/modal";
+@import "./components/offcanvas";

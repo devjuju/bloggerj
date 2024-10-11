@@ -1,5 +1,7 @@
 <?php $title = "Se connecter"; ?>
 <?php ob_start();
+
+use App\Core\Messages;
 ?>
 
 <!-- breadcrumb -->
@@ -19,76 +21,80 @@
 
 <section class="container py-5 my-1 my-md-4 my-lg-5">
 
-<div class="row gx-5">
+  <div class="row gx-5">
     <div class="col-6">
-        <!--begin::bloc-->
-        <div class="col-left-content">
-                <img src="images/bloggerj-img-01.svg" class="img-fluid featured-image-post" alt="image">
-        </div>
-        <!--end::Title-->
+      <!--begin::bloc-->
+      <div class="col-left-content">
+        <img src="images/bloggerj-img-01.svg" class="img-fluid featured-image-post" alt="image">
+      </div>
+      <!--end::Title-->
     </div>
     <div class="col-6">
-        <div class="card-shadow py-3 p-sm-4 p-md-5">
+      <div class="card-shadow py-3 p-sm-4 p-md-5">
         <div class="card-header">
-         <h2 class="titre-section">Bienvenue sur mon blog</h2>
-                        <p class="running-text fs-5">
-                        
-Vous n'avez pas encore de compte ?
-                            <a href="index.php?action=register" class="color-link-primary">Créer un compte</a>
-                        </p>
-                     
-                </div>
-            <div class="card-body">
-            <form  method="post" class="needs-validation" novalidate>
+          <h2 class="titre-section">Bienvenue sur mon blog</h2>
+          <p class="running-text fs-5">
+
+            Vous n'avez pas encore de compte ?
+            <a href="index.php?action=register" class="color-link-primary">Créer un compte</a>
+          </p>
+
+        </div>
+        <div class="card-body">
+
+          <form method="post" class="needs-validation" novalidate>
             <div class="row g-4">
-               
 
-               
-                 <!--begin::Form group-->
-                <div class="col-sm-12 form-group-style">
-                  <label class="form-label fs-base" for="email">Email</label>
-                  <input type="email" placeholder="" id="email" name="login[email]" value="<?= isset($register) ? $register->getEmail() : '' ?>">
-                  <?= isset($controle["email"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["email"] . "</p>" : '' ?>
-                </div>
-                 <!--begin::Form group-->
-                <div class="col-sm-12 form-group-style">
-                <div class="form-group-password">                   <label for="password" class="form-label fs-base">Mot de passe</label>
-                        <input type="password" id="password" name="login[password]" value="<?= isset($register) ? $register->getPassword() : '' ?>">
-                        <?= isset($controle["password"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["password"] . "</p>" : '' ?>
-                            </div>
-                </div>
-                 <!--begin::Form group-->
 
-                 
-             
-          
-                
-                <div class="col-sm-12 pt-4">
-                <div class="d-grid gap-2">
-                  <button type="submit" class="btn btn-primary">Envoyer</button>
-                  </div>
 
-                  <a href="index.php?action=account" class="d-grid gap-2 btn btn-outline-primary mb-3 mt-4">
-                         Aperçu du compte
-                    </a>
-         
+              <!--begin::Form group-->
+              <div class="col-sm-12 form-group-style">
+                <label class="form-label fs-base" for="email">Email</label>
+                <input type="email" placeholder="" id="email" name="login[email]" value="<?= isset($register) ? $register->getEmail() : '' ?>">
+                <?= isset($controle["email"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["email"] . "</p>" : '' ?>
+              </div>
+              <!--begin::Form group-->
+              <div class="col-sm-12 form-group-style">
+                <div class="form-group-password"> <label for="password" class="form-label fs-base">Mot de passe</label>
+                  <input type="password" id="password" name="login[password]" value="<?= isset($register) ? $register->getPassword() : '' ?>">
+                  <?= isset($controle["password"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["password"] . "</p>" : '' ?>
                 </div>
               </div>
-              </form>
-  
-
-         
+              <!--begin::Form group-->
 
 
 
 
-            
+
+              <div class="col-sm-12 pt-4">
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-primary">Envoyer</button>
+                </div>
+
+                <a href="index.php?action=account" class="d-grid gap-2 btn btn-outline-primary mb-3 mt-4">
+                  Aperçu du compte
+                </a>
+
+
+                <a href="#" class="btn btn-link btn-lg w-100 text-primary">Oubli du mot de passe ?</a>
+
+              </div>
+            </div>
+          </form>
+
+
+
+
+
+
+
+
         </div>
-    </div>
+      </div>
     </div>
   </div>
 
-      </section>
+</section>
 
 
 

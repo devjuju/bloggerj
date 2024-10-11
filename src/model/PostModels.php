@@ -1,30 +1,39 @@
 <?php
+
 namespace App\Model;
-class PostModels extends Model{
+
+class PostModels extends Model
+{
     protected $id;
-    protected $user_id;
-    protected $category;
+    protected $id_user;
     protected $title;
-    protected $introduction;
+    protected $category;
+    protected $excerpt;
     protected $content;
-    protected $image;
+    protected $thumbnail_image;
+    protected $featured_image;
     protected $created_at;
     protected $updated_at;
     protected $active;
+    protected $status;
 
     public function __construct($data = null)
-    {   
-       
+    {
+
         $this->table = 'posts';
-            
-        $this->setId($data['id']?? null);
-        $this->setUserId($data['user_id']?? null);
-        $this->setTitle($data['title']?? null);
-        $this->setCategory($data['category']?? null);
-        $this->setContent($data['content']?? null);
-        $this->setImage($data['image']?? null);
-        $this->setCreatedAt($data['created_at']?? null);
-        $this->setUpdated($data['updated_at']?? null);
+
+        $this->setId($data['id'] ?? null);
+        $this->setUserId($data['id_user'] ?? null);
+        $this->setTitle($data['title'] ?? null);
+        $this->setCategory($data['category'] ?? null);
+        $this->setExcerpt($data['excerpt'] ?? null);
+        $this->setContent($data['content'] ?? null);
+        $this->setThumbnail($data['thumbnail_image'] ?? null);
+        $this->setFeaturedImage($data['featured_image'] ?? null);
+        $this->setCreatedAt($data['created_at'] ?? null);
+        $this->setUpdated($data['updated_at'] ?? null);
+        $this->setActive($data['active'] ?? null);
+        $this->setStatus($data['status'] ?? null);
     }
 
     public function getId()
@@ -39,12 +48,12 @@ class PostModels extends Model{
 
     public function getUserId()
     {
-        return $this->user_id;
+        return $this->id_user;
     }
 
-    public function setUserId($user_id)
+    public function setUserId($id_user)
     {
-        $this->user_id = $user_id;
+        $this->id_user = $id_user;
     }
 
     public function getTitle()
@@ -68,14 +77,14 @@ class PostModels extends Model{
     }
 
 
-    public function getIntro()
+    public function getExcerpt()
     {
-        return $this->introduction;
+        return $this->excerpt;
     }
 
-    public function setIntro($introduction)
+    public function setExcerpt($excerpt)
     {
-        $this->introduction = $introduction;
+        $this->excerpt = $excerpt;
     }
 
     public function getContent()
@@ -88,16 +97,26 @@ class PostModels extends Model{
         $this->content = $content;
     }
 
-    public function getImage()
+    public function getThumbnail()
     {
-        return $this->image;
+        return $this->thumbnail_image;
     }
 
-    public function setImage($image)
+    public function setThumbnail($thumbnail_image)
     {
-        $this->image = $image;
+        $this->thumbnail_image = $thumbnail_image;
     }
-    
+
+    public function getFeaturedImage()
+    {
+        return $this->featured_image;
+    }
+
+    public function setFeaturedImage($featured_image)
+    {
+        $this->featured_image = $featured_image;
+    }
+
     public function getCreatedAt()
     {
         return $this->created_at;
@@ -107,7 +126,7 @@ class PostModels extends Model{
     {
         $this->created_at = $created_at;
     }
-    
+
 
     public function getUpdatedAt()
     {
@@ -127,5 +146,15 @@ class PostModels extends Model{
     public function setActive($active)
     {
         $this->active = $active;
+    }
+
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
     }
 }
