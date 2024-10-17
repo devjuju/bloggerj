@@ -16,6 +16,7 @@ class ValidatorCreatePost extends Validator
 
     public function checkData()
     {
+        $resultAuthor = $this->checkAuthor($this->data->getAuthor());
         $resultTitle = $this->checkTitle($this->data->getTitle());
         $resultCategory = $this->checkCategory($this->data->getCategory());
         $resultExcerpt = $this->checkExcerpt($this->data->getExcerpt());
@@ -24,10 +25,11 @@ class ValidatorCreatePost extends Validator
 
 
 
-        if ($resultTitle && $resultCategory && $resultExcerpt && $resultContent === true) {
+        if ($resultAuthor && $resultTitle && $resultCategory && $resultExcerpt && $resultContent === true) {
             return true;
         } else {
             $errors = [
+                'author' => $resultAuthor,
                 'title' => $resultTitle,
                 'category' => $resultCategory,
                 'excerpt' => $resultExcerpt,
@@ -35,6 +37,17 @@ class ValidatorCreatePost extends Validator
 
             ];
             return $errors;
+        }
+    }
+
+    public function checkAuthor($author)
+    {
+        if (empty($author)) {
+            return "Entrer votre pseudo ";
+        } elseif ($this->isSmallThan($author, 5)) {
+            return "c'est plus petit que 5 caractères";
+        } else {
+            return true;
         }
     }
 
@@ -53,8 +66,6 @@ class ValidatorCreatePost extends Validator
     {
         if (empty($category)) {
             return "Veillez choisir une catégorie";
-        } elseif ($this->isSmallThan($category, 5)) {
-            return "5 caractères minimum";
         } else {
             return true;
         }

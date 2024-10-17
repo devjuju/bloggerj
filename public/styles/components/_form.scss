@@ -1,6 +1,6 @@
 /* Forms */
 
-.form-group-style{
+.form-group-style {
     input[type=text] {
         width: 100%;
         padding: .825rem 1rem;
@@ -24,24 +24,33 @@
         border-radius: 1rem;
         outline-color: $colour-primary;
     }
-   
-        input[type=password] {
-            width: 100%;
-            padding: .825rem 1rem;
-            box-sizing: border-box;
-            border-radius: 8px;
-            background-color: $colour-body;
-            color: $colour-primary;
-            border: 1px solid #ebebeb;
-            border-radius: 1rem;
-            outline-color: $colour-primary;
 
-       
-   
-
+    input[type=password] {
+        width: 100%;
+        padding: .825rem 1rem;
+        box-sizing: border-box;
+        border-radius: 8px;
+        background-color: $colour-body;
+        color: $colour-primary;
+        border: 1px solid #ebebeb;
+        border-radius: 1rem;
+        outline-color: $colour-primary;
     }
 
- 
+    input[type=date] {
+        width: 100%;
+        padding: .825rem 1rem;
+        box-sizing: border-box;
+        border-radius: 8px;
+        background-color: $colour-body;
+        color: $colour-primary;
+        border: 1px solid #ebebeb;
+        border-radius: 1rem;
+        outline-color: $colour-primary;
+    }
+
+
+
 
     input[type=file] {
         width: 100%;
@@ -53,9 +62,10 @@
         border: 1px solid #ebebeb;
         border-radius: 1rem;
         outline-color: $colour-primary;
-     
-    
+
+
     }
+
     input::file-selector-button {
 
         font-family: $font-text;
@@ -70,19 +80,20 @@
         padding-left: 28px;
         padding-right: 28px;
         padding-bottom: 10px;
-        &:hover{
+
+        &:hover {
             color: $colour-body;
             background: $colour-hover-primary;
             border: 1px solid $colour-hover-primary;
         }
-      }
-      
+    }
 
 
-    
-   
-  
-    
+
+
+
+
+
     textarea {
         width: 100%;
         height: 150px;
@@ -97,16 +108,19 @@
         outline-color: $colour-primary;
     }
 
-  
 
-    & p{
+
+    & p {
         font-size: 14px;
         margin-top: 10px;
         margin-bottom: 0;
-        & i{
+
+        & i {
             margin-right: 3px;
         }
-        color:#d60000;;
+
+        color:#d60000;
+        ;
     }
 
     .form-check-input:checked {
@@ -115,3 +129,54 @@
     }
 }
 
+
+.form-group-style2 {
+    .form-control {
+        display: block;
+        width: 100%;
+        padding: 0.825rem 1rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: $colour-primary;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: $colour-body;
+        background-clip: padding-box;
+        border: 1 solid $colour-primary;
+        border-radius: 1rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+    }
+
+    .form-select {
+        --bs-form-select-bg-img: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e);
+        display: block;
+        width: 100%;
+        padding: 0.825rem 1rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: $colour-primary;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: $colour-body;
+        background-image: var(--bs-form-select-bg-img), var(--bs-form-select-bg-icon, none);
+        background-repeat: no-repeat;
+        background-position: right .75rem center;
+        background-size: 16px 12px;
+        border: 1 solid $colour-primary;
+        border-radius: 1rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    & p {
+        margin-top: 10px;
+        font-family: $font-text;
+        font-size: 14px;
+        color: #F8285A;
+    }
+
+}

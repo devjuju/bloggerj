@@ -188,6 +188,14 @@
   margin-right: 10px;
 }
 
+.marging-top-20 {
+  margin-top: 20px;
+}
+
+.marging-bottom-10 {
+  margin-bottom: 10px;
+}
+
 /* base */
 * {
   padding: 0px;
@@ -1184,6 +1192,17 @@ fieldset:disabled .btn {
   border-radius: 1rem;
   outline-color: #986df8;
 }
+.form-group-style input[type=date] {
+  width: 100%;
+  padding: 0.825rem 1rem;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: white;
+  color: #986df8;
+  border: 1px solid #ebebeb;
+  border-radius: 1rem;
+  outline-color: #986df8;
+}
 .form-group-style input[type=file] {
   width: 100%;
   padding: 0.825rem 1rem;
@@ -1239,6 +1258,51 @@ fieldset:disabled .btn {
 .form-group-style .form-check-input:checked {
   background-color: #986df8;
   border: 0px solid #986df8;
+}
+
+.form-group-style2 .form-control {
+  display: block;
+  width: 100%;
+  padding: 0.825rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #986df8;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  background-clip: padding-box;
+  border: 1 solid #986df8;
+  border-radius: 1rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-group-style2 .form-select {
+  --bs-form-select-bg-img: url(data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"%3e%3cpath fill="none" stroke="%23343a40" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m2 5 6 6 6-6"/%3e%3c/svg%3e);
+  display: block;
+  width: 100%;
+  padding: 0.825rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #986df8;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  background-image: var(--bs-form-select-bg-img), var(--bs-form-select-bg-icon, none);
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  border: 1 solid #986df8;
+  border-radius: 1rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-group-style2 p {
+  margin-top: 10px;
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 14px;
+  color: #F8285A;
 }
 
 /* card */

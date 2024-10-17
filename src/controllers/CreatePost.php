@@ -25,8 +25,9 @@ class CreatePost
             var_dump($controle);
             if ($controle === true) {
 
-
-
+                $createPost->setThumbnailImage('bloggerj-thumbnail-img-2.png');
+                $createPost->setFeaturedImage('bloggerj-featured-image-2.png');
+                $createPost->setUsersId('1');
                 $createPost->setStatus('Publié');
                 $createPost->setActive('1');
                 $createPost->create();

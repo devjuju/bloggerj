@@ -28,91 +28,61 @@
       <div class="row row-cols-lg-2 row-cols-sm-2 row-cols-1 gy-md-4 gy-2">
 
         <!-- Item -->
-        <div class="col pb-3">
-          <article class="card card-article border-0 ">
-            <div class="position-relative">
+        <?php foreach ($posts as $post): ?>
+          <div class="col pb-3">
+            <article class="card card-article border-0 ">
+              <div class="position-relative">
+                <?php
 
-              <a href="#" class="btn btn-icon-pencil-circle-secondary  position-absolute top-0 end-0 zindex-5 me-3 mt-3">
-                <i class="bi bi-pencil-fill"></i>
-              </a>
-              <img src="images/bloggerj-thumbnail-img.png" class="card-img-top" alt="Image">
-            </div>
-            <div class="card-body">
-              <div class="d-flex flex-row bd-highlight mb-2">
-                <div class="badge-content bd-highlight">
-                  <a href="#" class="badge fs-sm text-nav text-decoration-none">Business</a>
+
+
+                $session = &$_SESSION;
+
+
+
+                if (isset($session['auth']['role'])) {
+                ?>
+
+                  <?php if ($session['auth']['role'] === 'administrateur') { ?>
+                    <a href="#" class="btn btn-icon-pencil-circle-secondary  position-absolute top-0 end-0 zindex-5 me-3 mt-3">
+                      <i class="bi bi-pencil-fill"></i>
+                    </a>
+                  <?php } else { ?>
+
+                  <?php } ?>
+
+                <?php } else { ?>
+
+                <?php } ?>
+
+                <img src="images/<?= $post->thumbnail_image ?>" class="card-img-top" alt="Image">
+              </div>
+              <div class="card-body">
+                <div class="marging-top-20 marging-bottom-10">
+                  <span class="fs-sm text-primary"><?= $post->category ?></span>
                 </div>
+                <h3>
+                  <a class="card-post-title" href="index.php?action=post"><?= $post->title ?></a>
+                </h3>
+                <div class="d-flex flex-row bd-highlight mb-3">
+                  <div class="meta-content-blog bd-highlight">
+                    <i class="bi bi-person-fill fs-base me-1"></i>
+                    <span class="fs-sm"><?= $post->author ?></span>
+                  </div>
+                  <div class="meta-content-blog bd-highlight">
+                    <i class="bi bi-clock-fill fs-base me-1"></i>
+                    <span class="fs-sm"><?= $post->created_at ?></span>
+                  </div>
+                </div>
+                <p class="running-text"><?= $post->excerpt ?></p>
               </div>
 
-              <div class="d-flex flex-row bd-highlight mb-2">
 
-                <div class="category-blog bd-highlight">
+            </article>
+          </div>
+        <?php endforeach; ?>
 
-                  <span class="fs-sm">Développement web </span>
-                </div>
-              </div>
 
-              <h3>
-                <a class="card-post-title" href="index.php?action=post">This Week in Search: New Limits and Exciting Features</a>
-              </h3>
-              <div class="d-flex flex-row bd-highlight mb-3">
-                <div class="meta-content-blog bd-highlight">
-                  <i class="bi bi-person-fill fs-base me-1"></i>
-                  <span class="fs-sm">Auteur</span>
-                </div>
-                <div class="meta-content-blog bd-highlight">
-                  <i class="bi bi-clock-fill fs-base me-1"></i>
-                  <span class="fs-sm">Sep 16, 2023</span>
-                </div>
-              </div>
-              <p class="running-text">Ultricies massa iaculis vestibulum egestas vestibulum, cursus. Leo non arcu ultricies senectus a purus sed.</p>
-            </div>
-
-          </article>
-        </div>
-        <!-- Item -->
-        <div class="col pb-3">
-          <article class="card card-article border-0 ">
-            <div class="position-relative">
-
-              <a href="#" class="btn btn-icon-pencil-circle-secondary  position-absolute top-0 end-0 zindex-5 me-3 mt-3">
-                <i class="bi bi-pencil-fill"></i>
-              </a>
-              <img src="images/bloggerj-thumbnail-img.png" class="card-img-top" alt="Image">
-            </div>
-            <div class="card-body">
-              <div class="d-flex flex-row bd-highlight mb-2">
-                <div class="badge-content bd-highlight">
-                  <a href="#" class="badge fs-sm text-nav text-decoration-none">Business</a>
-                </div>
-              </div>
-
-              <div class="d-flex flex-row bd-highlight mb-2">
-
-                <div class="category-blog bd-highlight">
-
-                  <span class="fs-sm">Développement web </span>
-                </div>
-              </div>
-
-              <h3>
-                <a class="card-post-title" href="index.php?action=post">This Week in Search: New Limits and Exciting Features</a>
-              </h3>
-              <div class="d-flex flex-row bd-highlight mb-3">
-                <div class="meta-content-blog bd-highlight">
-                  <i class="bi bi-person-fill fs-base me-1"></i>
-                  <span class="fs-sm">Auteur</span>
-                </div>
-                <div class="meta-content-blog bd-highlight">
-                  <i class="bi bi-clock-fill fs-base me-1"></i>
-                  <span class="fs-sm">Sep 16, 2023</span>
-                </div>
-              </div>
-              <p class="running-text">Ultricies massa iaculis vestibulum egestas vestibulum, cursus. Leo non arcu ultricies senectus a purus sed.</p>
-            </div>
-
-          </article>
-        </div>
 
 
 

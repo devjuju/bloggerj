@@ -5,7 +5,8 @@ namespace App\Model;
 class PostModels extends Model
 {
     protected $id;
-    protected $id_user;
+    protected $users_id;
+    protected $author;
     protected $title;
     protected $category;
     protected $excerpt;
@@ -13,7 +14,6 @@ class PostModels extends Model
     protected $thumbnail_image;
     protected $featured_image;
     protected $created_at;
-    protected $updated_at;
     protected $active;
     protected $status;
 
@@ -23,15 +23,15 @@ class PostModels extends Model
         $this->table = 'posts';
 
         $this->setId($data['id'] ?? null);
-        $this->setUserId($data['id_user'] ?? null);
+        $this->setUsersId($data['users_id'] ?? null);
+        $this->setAuthor($data['author'] ?? null);
         $this->setTitle($data['title'] ?? null);
         $this->setCategory($data['category'] ?? null);
         $this->setExcerpt($data['excerpt'] ?? null);
         $this->setContent($data['content'] ?? null);
-        $this->setThumbnail($data['thumbnail_image'] ?? null);
+        $this->setThumbnailImage($data['thumbnail_image'] ?? null);
         $this->setFeaturedImage($data['featured_image'] ?? null);
         $this->setCreatedAt($data['created_at'] ?? null);
-        $this->setUpdated($data['updated_at'] ?? null);
         $this->setActive($data['active'] ?? null);
         $this->setStatus($data['status'] ?? null);
     }
@@ -45,15 +45,24 @@ class PostModels extends Model
     {
         $this->id = $id;
     }
-
-    public function getUserId()
+    public function getUsersId()
     {
-        return $this->id_user;
+        return $this->users_id;
     }
 
-    public function setUserId($id_user)
+    public function setUsersId($users_id)
     {
-        $this->id_user = $id_user;
+        $this->users_id = $users_id;
+    }
+
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    public function setAuthor($author)
+    {
+        $this->author = $author;
     }
 
     public function getTitle()
@@ -97,12 +106,12 @@ class PostModels extends Model
         $this->content = $content;
     }
 
-    public function getThumbnail()
+    public function getThumbnailImage()
     {
         return $this->thumbnail_image;
     }
 
-    public function setThumbnail($thumbnail_image)
+    public function setThumbnailImage($thumbnail_image)
     {
         $this->thumbnail_image = $thumbnail_image;
     }
@@ -127,16 +136,6 @@ class PostModels extends Model
         $this->created_at = $created_at;
     }
 
-
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-
-    public function setUpdated($updated_at)
-    {
-        $this->updated_at = $updated_at;
-    }
 
     public function getActive()
     {

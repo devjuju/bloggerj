@@ -19,14 +19,14 @@
         use App\Core\Auth;
         use App\Core\Session;
 
-        $auth = new Auth;
+        $session = &$_SESSION;
 
 
 
-        if (isset(self::$auth['auth']['role'])) {
+        if (isset($session['auth']['role'])) {
         ?>
           <li class="nav-item">
-            <?php if (self::$auth['auth']['role'] === 'administrateur') { ?>
+            <?php if ($session['auth']['role'] === 'administrateur') { ?>
               <div class="d-flex align-items-center position-relative ps-md-3 pe-lg-3 mb-2">
 
                 <img src="images/profil-user-defaut-img.svg" class="rounded-circle" width="48" alt="Avatar">

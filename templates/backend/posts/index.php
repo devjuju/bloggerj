@@ -111,126 +111,53 @@
           <div class="row row-cols-lg-2 row-cols-sm-2 row-cols-1 gy-md-4 gy-2">
 
             <!-- Item -->
-            <div class="col pb-3">
-              <article class="card card-article border-0 ">
-                <div class="position-relative">
-                  <img src="images/article-img-vignette-chalets-et-caviar.png" class="card-img-top" alt="Image">
-                </div>
-                <div class="card-body">
-                  <div class="d-flex flex-row bd-highlight mb-3">
-                    <div class="badge-content bd-highlight">
-                      <a href="#" class="badge fs-sm text-nav text-decoration-none">Business</a>
+            <?php foreach ($posts as $post): ?>
+              <div class="col pb-3">
+                <article class="card card-article border-0 ">
+                  <div class="position-relative">
+                    <img src="images/<?= $post->thumbnail_image ?>" class="card-img-top" alt="Image">
+                  </div>
+                  <div class="card-body">
+                    <div class="marging-top-20 marging-bottom-10">
+                      <span class="fs-sm text-primary"><?= $post->category ?></span>
                     </div>
+                    <h3>
+                      <a class="card-post-title" href="index.php?action=post"><?= $post->title ?></a>
+                    </h3>
+                    <div class="d-flex flex-row bd-highlight mb-3">
+                      <div class="meta-content-blog bd-highlight">
+                        <i class="bi bi-person-fill fs-base me-1"></i>
+                        <span class="fs-sm"><?= $post->author ?></span>
+                      </div>
+                      <div class="meta-content-blog bd-highlight">
+                        <i class="bi bi-clock-fill fs-base me-1"></i>
+                        <span class="fs-sm"><?= $post->created_at ?></span>
+                      </div>
+                    </div>
+                    <p class="running-text"><?= $post->excerpt ?></p>
                   </div>
 
-                  <div class="d-flex flex-row bd-highlight mb-3">
-                    <div class="category-blog category bd-highlight">
+                  <div class="card-footer">
+                    <div class="d-flex">
+                      <!-- Aperçu -->
+                      <a href="index.php?action=blog" class="btn btn-outline-primary spacing-element-marging-right-10">
+                        <?= $post->status ?>
 
-                      <span class="fs-sm">Web</span>
-                      <i class="bi bi-arrow-right-circle-fill fs-base me-1"></i>
-                    </div>
-                    <div class="category-blog bd-highlight">
-
-                      <span class="fs-sm">Wordpress - Html </span>
-                    </div>
-                  </div>
-
-                  <h3>
-                    <a class="card-post-title" href="index.php?action=post">This Week in Search: New Limits and Exciting Features</a>
-                  </h3>
-                  <div class="d-flex flex-row bd-highlight mb-3">
-                    <div class="meta-content-blog bd-highlight">
-                      <i class="bi bi-person-fill fs-base me-1"></i>
-                      <span class="fs-sm">Auteur</span>
-                    </div>
-                    <div class="meta-content-blog bd-highlight">
-                      <i class="bi bi-clock-fill fs-base me-1"></i>
-                      <span class="fs-sm">Sep 16, 2023</span>
+                      </a>
+                      <!-- Editer -->
+                      <a href="#" class="btn btn-icon-circle-primary">
+                        <i class="bi bi-pencil-fill"></i>
+                      </a>
+                      <!-- Supprimer -->
+                      <a href="#" class="btn btn-icon-circle-secondary">
+                        <i class="bi bi-trash3-fill"></i>
+                      </a>
                     </div>
                   </div>
-                  <p class="running-text">Ultricies massa iaculis vestibulum egestas vestibulum, cursus. Leo non arcu ultricies senectus a purus sed.</p>
-                </div>
+                </article>
+              </div>
+            <?php endforeach; ?>
 
-                <div class="card-footer">
-                  <div class="d-flex">
-                    <!-- Facebook -->
-                    <a href="index.php?action=post" class="btn btn-dark spacing-element-marging-right-10">
-                      Publié
-
-                    </a>
-                    <!-- Twitter -->
-                    <a href="index.php?action=updatepost" class="btn btn-icon-circle-primary">
-                      <i class="bi bi-pencil-fill"></i>
-                    </a>
-                    <!-- Instagram -->
-                    <a href="#" class="btn btn-icon-circle-secondary">
-                      <i class="bi bi-trash3-fill"></i>
-                    </a>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- Item -->
-            <div class="col pb-3">
-              <article class="card card-article border-0 ">
-                <div class="position-relative">
-                  <img src="images/article-img-vignette-chalets-et-caviar.png" class="card-img-top" alt="Image">
-                </div>
-                <div class="card-body">
-                  <div class="d-flex flex-row bd-highlight mb-3">
-                    <div class="badge-content bd-highlight">
-                      <a href="#" class="badge fs-sm text-nav text-decoration-none">Business</a>
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row bd-highlight mb-3">
-                    <div class="category-blog category bd-highlight">
-
-                      <span class="fs-sm">Web</span>
-                      <i class="bi bi-arrow-right-circle-fill fs-base me-1"></i>
-                    </div>
-                    <div class="category-blog bd-highlight">
-
-                      <span class="fs-sm">Wordpress - Html </span>
-                    </div>
-                  </div>
-
-                  <h3>
-                    <a class="card-post-title" href="index.php?action=post">This Week in Search: New Limits and Exciting Features</a>
-                  </h3>
-                  <div class="d-flex flex-row bd-highlight mb-3">
-                    <div class="meta-content-blog bd-highlight">
-                      <i class="bi bi-person-fill fs-base me-1"></i>
-                      <span class="fs-sm">Auteur</span>
-                    </div>
-                    <div class="meta-content-blog bd-highlight">
-                      <i class="bi bi-clock-fill fs-base me-1"></i>
-                      <span class="fs-sm">Sep 16, 2023</span>
-                    </div>
-                  </div>
-                  <p class="running-text">Ultricies massa iaculis vestibulum egestas vestibulum, cursus. Leo non arcu ultricies senectus a purus sed.</p>
-                </div>
-
-                <div class="card-footer">
-                  <div class="d-flex">
-                    <!-- Aperçu -->
-                    <a href="index.php?action=blog" class="btn btn-outline-primary spacing-element-marging-right-10">
-                      Inactif
-
-                    </a>
-                    <!-- Editer -->
-                    <a href="#" class="btn btn-icon-circle-primary">
-                      <i class="bi bi-pencil-fill"></i>
-                    </a>
-                    <!-- Supprimer -->
-                    <a href="#" class="btn btn-icon-circle-secondary">
-                      <i class="bi bi-trash3-fill"></i>
-                    </a>
-                  </div>
-                </div>
-              </article>
-            </div>
 
 
 

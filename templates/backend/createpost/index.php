@@ -115,56 +115,62 @@
           <div class="col-lg-7">
             <h2 class="titre-h3">Formulaire de création</h2>
             <p class="running-text mb-4 pb-2">Veillez remplir le formulaire de création pour ajouter un article.</p>
+
+
+
+
+
+
             <div class="row g-4">
               <h3 class="titre-h5">Informations principales</h3>
 
-
-
-
-
-              <div class="col-sm-12 form-group-style">
-
-                <label class="form-label">Choix de la catégorie</label>
-                <div class="d-sm-flex">
-                  <!-- Radio -->
-                  <div class="form-check radio-bg-light me-4">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked="">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      Développement de sites web
-                    </label>
-                  </div>
-                  <!-- Radio -->
-                  <div class="form-check radio-bg-light me-4">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                    <label class="form-check-label" for="flexRadioDefault2">
-                      Développement d'applications
-                    </label>
-                  </div>
-
-                </div>
+              <div class="col-sm-12 form-group-style2">
+                <label class="form-label fs-base" for="author">Auteur</label>
+                <input class="form-control" type="text" id="author" name="create_post[author]" placeholder="Entrer votre nom ou pseudo" value="<?= isset($createPost) ? $createPost->getAuthor() : '' ?>">
+                <?= isset($controle["author"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["author"] . "</p>" : '' ?>
               </div>
 
 
-              <div class="col-sm-12 form-group-style">
+              <div class="col-sm-12 form-group-style2">
+
+
+                <label class="form-label fs-base" for="category">Catégorie</label>
+                <select class="form-select" id="category" name="create_post[category]" value="<?= isset($createPost) ? $createPost->getCategory() : '' ?>">
+                  <option>Développement de sites web</option>
+                  <option>Développement d'application web</option>
+                  <?= isset($controle["category"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["category"] . "</p>" : '' ?>
+
+                </select>
+
+
+
+
+              </div>
+
+
+              <div class="col-sm-12 form-group-style2">
                 <label class="form-label fs-base" for="title">Titre</label>
-                <input type="text" placeholder="" id="title" name="create_post[title]" value="<?= isset($createPost) ? $createPost->getTitle() : '' ?>">
+                <input class="form-control" type="text" placeholder="" id="title" name="create_post[title]" value="<?= isset($createPost) ? $createPost->getTitle() : '' ?>">
                 <?= isset($controle["title"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["title"] . "</p>" : '' ?>
               </div>
 
-              <div class="col-sm-12 form-group-style">
+              <div class="col-sm-12 form-group-style2">
                 <label class="form-label fs-base" for="excerpt">Extrait</label>
-                <input type="text" placeholder="" id="excerpt" name="create_post[excerpt]" value="<?= isset($createPost) ? $createPost->getExcerpt() : '' ?>">
+                <input class="form-control" type="text" placeholder="" id="excerpt" name="create_post[excerpt]" value="<?= isset($createPost) ? $createPost->getExcerpt() : '' ?>">
                 <?= isset($controle["excerpt"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["excerpt"] . "</p>" : '' ?>
               </div>
 
 
               <!--begin::Form group-->
-              <div class="col-sm-12 form-group-style">
+              <div class="col-sm-12 form-group-style2">
                 <label class="form-label fs-base" for="content">Description</label>
-                <textarea rows="6" placeholder="" name="create_post[content]" id="content"><?= isset($createPost) ? $createPost->getContent() : '' ?></textarea>
+                <textarea class="form-control" rows="6" placeholder="" name="create_post[content]" id="content"><?= isset($createPost) ? $createPost->getContent() : '' ?></textarea>
                 <?= isset($controle["content"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["content"] . "</p>" : '' ?>
 
               </div>
+
+
+
             </div>
 
             <div class="row g-4 pt-5">
@@ -193,18 +199,9 @@
               <!-- Basic card example -->
               <div class="card card-background">
                 <div class="card-body">
-                  <div class="text-center">
+                  <div class="text-center spacing-element-marging-bottom-20">
                     <h4 class="titre-h4">Publié l’article</h4>
-                    <div class="d-flex justify-content-center bd-highlight mb-3">
-                      <div class="meta-content-post bd-highlight">
-                        <i class="bi bi-person-fill fs-base me-1"></i>
-                        <span class="fs-sm">Auteur</span>
-                      </div>
-                      <div class="meta-content-post bd-highlight">
-                        <i class="bi bi-clock-fill fs-base me-1"></i>
-                        <span class="fs-sm">Sep 16, 2023</span>
-                      </div>
-                    </div>
+
 
                   </div>
 

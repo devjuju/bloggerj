@@ -14,7 +14,7 @@ use App\Model\UsersModels;
 
 class Login
 {
-    public function login1()
+    public function login()
     {
         $request = new Request();
         $submit = $request->post('login');
@@ -93,7 +93,7 @@ class Login
         require('../templates/frontend/login/index.php');
     }
 
-    public function login()
+    public function login1()
     {
         $request = new Request();
         $submit = $request->post('login');

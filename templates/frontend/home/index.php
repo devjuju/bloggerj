@@ -12,21 +12,21 @@ use App\Core\Session; ?>
     <div class="row">
       <div class="container">
         <?php
-        $auth = &$_SESSION;
+        $session = &$_SESSION;
 
 
 
         ?>
-        <?php if (!empty($auth['message']['danger'])): ?>
+        <?php if (!empty($session['message']['danger'])): ?>
           <div class="alert alert-danger" role="alert">
-            <?php echo $auth['message']['danger'];
-            unset($auth['message']['danger']); ?>
+            <?php echo $session['message']['danger'];
+            unset($session['message']['danger']); ?>
           </div>
         <?php endif; ?>
-        <?php if (!empty($auth['message']['success'])): ?>
+        <?php if (!empty($session['message']['success'])): ?>
           <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <?php echo $auth['message']['success'];
-            unset($auth['message']['success']); ?>
+            <?php echo $session['message']['success'];
+            unset($session['message']['success']); ?>
             <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
 
