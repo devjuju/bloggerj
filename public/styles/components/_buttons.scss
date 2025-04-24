@@ -543,7 +543,7 @@
 }
 
 
-.btn-icon-secondary {
+.btn-icon-social-secondary {
     background-color: $colour-secondary;
     padding-top: 4px;
     padding-left: 8px;
@@ -560,6 +560,183 @@
     }
 
 }
+
+.btn-icon-primary {
+    background-color: $colour-primary;
+    padding-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    margin-right: 8px;
+
+    & i {
+        font-size: 20px;
+        color: $colour-body;
+    }
+
+    &:hover {
+        background-color: #8651fa;
+    }
+
+}
+
+.btn-icon-secondary {
+    background-color: $colour-secondary;
+    padding-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    margin-right: 8px;
+
+    & i {
+        font-size: 20px;
+        color: $colour-body;
+    }
+
+    &:hover {
+        background-color: #d65a11;
+    }
+
+}
+
+.btn-icon-danger {
+    background-color: $colour-danger;
+    padding-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    margin-right: 8px;
+
+    & i {
+        font-size: 20px;
+        color: $colour-body;
+    }
+
+    &:hover {
+        background-color: $colour-danger;
+    }
+
+}
+
+.btn-icon-sucess {
+    background-color: $colour-success;
+    padding-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    margin-right: 8px;
+
+    & i {
+        font-size: 20px;
+        color: $colour-body;
+    }
+
+    &:hover {
+        background-color: $colour-success;
+    }
+
+}
+
+.btn-icon-dark {
+    background-color: $colour-title;
+    padding-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    margin-right: 8px;
+
+    & i {
+        font-size: 20px;
+        color: $colour-body;
+    }
+
+    &:hover {
+        background-color: $colour-title;
+    }
+
+}
+
+
+
+
+
+
+.btn-icon-outline-dark {
+    background-color: $colour-body;
+    padding-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    margin-right: 8px;
+    border: 1px solid $colour-title;
+    font-size: 20px;
+    color: $colour-title;
+
+    &:hover {
+        background-color: $colour-title;
+        color: $colour-body;
+
+    }
+
+}
+
+.btn-icon-outline-primary {
+    background-color: $colour-body;
+    padding-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    margin-right: 8px;
+    border: 1px solid $colour-primary;
+    font-size: 20px;
+    color: $colour-primary;
+
+    &:hover {
+        background-color: $colour-primary;
+        color: $colour-body;
+
+    }
+
+}
+
+.btn-icon-outline-danger {
+    background-color: $colour-body;
+    padding-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    margin-right: 8px;
+    border: 1px solid $colour-danger;
+    font-size: 20px;
+    color: $colour-danger;
+
+    &:hover {
+        background-color: $colour-danger;
+        color: $colour-body;
+
+    }
+
+}
+
+.btn-icon-outline-success {
+    background-color: $colour-body;
+    padding-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    margin-right: 8px;
+    border: 1px solid $colour-success;
+    font-size: 20px;
+    color: $colour-success;
+
+    &:hover {
+        background-color: $colour-success;
+        color: $colour-body;
+
+    }
+
+}
+
 
 .btn-icon-circle-secondary {
     background-color: $colour-secondary;
@@ -741,5 +918,53 @@ fieldset:disabled .btn {
         color: $colour-body;
         background: #E8AD8D;
         border: 1px solid #E8AD8D;
+    }
+}
+
+
+
+.btn-icon-modal-circle-secondary {
+    font-family: $font-text;
+    font-size: 18px;
+    font-weight: $font-medium;
+    color: $colour-body;
+    background: $colour-secondary;
+    border: 1px solid $colour-secondary;
+    border-radius: 50%;
+    box-shadow: $box-shadow;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    cursor: pointer;
+
+    &:hover {
+        color: $colour-body;
+        background: $colour-hover-secondary;
+        border: 1px solid $colour-hover-secondary;
+    }
+}
+
+
+.btn-status-modal-outline-primary {
+    font-family: $font-text;
+    font-size: 18px;
+    font-weight: $font-medium;
+    color: $colour-primary;
+    background: $colour-body;
+    border: 1px solid $colour-primary;
+    border-radius: 24px;
+    box-shadow: $box-shadow;
+    padding-top: 10px;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-bottom: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+
+    &:hover {
+        color: $colour-body;
+        background: $colour-hover-primary;
+        border: 1px solid $colour-hover-primary;
     }
 }

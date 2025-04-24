@@ -11,7 +11,7 @@
     padding-bottom: 30px;
 
     .card-header {
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
 
 }
@@ -112,6 +112,8 @@
 
     .card-body {
 
+
+
         .icon-box {
             background-color: $colour-primary;
             border-top-left-radius: 20px;
@@ -187,8 +189,21 @@
     padding-bottom: 30px;
     background-color: $colour-body;
 
-    .card-body {
 
+
+    .card-header {
+        text-align: center;
+
+        background-color: white;
+        border-bottom: 0px;
+
+        img.card-img-profil {
+            border-radius: 50%;
+            width: 100px;
+        }
+    }
+
+    .card-body {
         .icon-box {
             background-color: $colour-primary;
             border-top-left-radius: 20px;
@@ -241,4 +256,38 @@
     }
 
 
+}
+
+.card-border-gray {
+
+    border: 1px solid #dee2e6;
+    border-radius: 27px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    background-color: $colour-body;
+}
+
+
+/* card - images */
+.bg-repeat-0 {
+    background-repeat: no-repeat !important;
+}
+
+.bg-position-center {
+    background-position: center !important;
+}
+
+.bg-size-cover {
+    background-size: cover !important;
+}
+
+a[class^=bg-]:not(.btn),
+a[class*=bg-]:not(.btn) {
+    transition: background-color .25s ease;
+}
+
+.overflow-hidden {
+    overflow: hidden !important;
 }
