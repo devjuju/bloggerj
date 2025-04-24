@@ -6,47 +6,31 @@ use App\Validators\ValidatorContact;
 
 class FormContact
 {
-    public $data;
 
-    public function __construct($data)
+    public object $data;
+
+
+    public function __construct(object $data)
     {
         $this->data = $data;
-       
-        // prendre les données de $form
-        // enregistrer les données avec les setters
     }
 
- 
-    public function validate()
-    {   
-        
-        // valider les données en les recupérant avec les getters
+
+    public function validate(): array|bool
+    {
+
         $validator = new ValidatorContact($this->data);
         $result = $validator->checkData();
-
-      
         print_r($result);
-        
-            foreach ($result as $key => $value) { 
-                if ($value === true) {
-                    unset($result[array_search($key, $result)]);
-                }
+
+
+        foreach ($result as $key => $value) {
+            if ($value === true) {
+                unset($result[$key]);
             }
-        
-        
-        // renvoi true sinon renvoi un tableau avec les messages
-        // exemple de tableau a retourner
-        /* 'errors' => [
-            'email' => 'le champ doit contenir plus de 5 caractères',
-            'subjet' => 'ne doit pas être vide'
-        ]*/
-       return $result;
+        }
+
+
+        return $result;
     }
-  
-
-
-
-
-
-
 }

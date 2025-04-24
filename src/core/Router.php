@@ -2,30 +2,13 @@
 
 namespace App\Core;
 
-use App\Controllers\Account;
-use App\Controllers\AccountSecurity;
-use App\Controllers\AccountSettings;
-use App\Controllers\Admin;
-
-use App\Controllers\Blog;
-use App\Controllers\Comments;
-use App\Controllers\Contact;
-use App\Controllers\CreatePost;
-use App\Controllers\CreateUser;
-use App\Controllers\Dashboard;
-use App\Controllers\Home;
-use App\Controllers\Login;
-
-use App\Controllers\Logout;
-use App\Controllers\Post;
-use App\Controllers\Posts;
-
-use App\Controllers\Register;
-use App\Controllers\UpdatePost;
-use App\Controllers\UpdateUser;
-use App\Controllers\Users;
+use App\Controllers\CommentsControllers;
+use App\Controllers\ContactController;
+use App\Controllers\DashboardController;
+use App\Controllers\HomeController;
+use App\Controllers\PostsController;
+use App\Controllers\UsersController;
 use App\Core\Request;
-
 
 
 /* Utilisation de la condition switch pour optimiser le code */
@@ -33,7 +16,7 @@ use App\Core\Request;
 class Router
 {
     protected $routes;
-    public function run()
+    public function run(): void
     {
 
         $request = new Request();
@@ -44,88 +27,143 @@ class Router
                 switch ($routes) {
 
                     case 'contact':
-                        $contact = new Contact();
+                        $contact = new ContactController();
                         $contact->contact();
                         break;
 
 
                     case 'login':
-                        $login = new Login();
+                        $login = new UsersController();
                         $login->login();
                         break;
 
-
-
                     case 'register':
-                        $register = new Register();
+                        $register = new UsersController();
                         $register->register();
                         break;
 
                     case 'account':
-                        $account = new Account();
+                        $account = new UsersController;
                         $account->account();
                         break;
 
-                    case 'accountsettings':
-                        $accountSettings = new AccountSettings();
-                        $accountSettings->accountSettings();
+                    case 'account_settings':
+                        $accountSettings = new UsersController();
+                        $accountSettings->accountSettings($request->get('id'));
                         break;
 
                     case 'accountsecurity':
-                        $accountSecurity = new AccountSecurity;
+                        $accountSecurity = new UsersController();
                         $accountSecurity->accountSecurity();
                         break;
 
 
 
                     case 'blog':
-                        $blog = new Blog();
+                        $blog = new PostsController;
                         $blog->blog();
                         break;
 
+                    case 'post':
+                        $post = new PostsController();
+                        $post->post($request->get('id'));
+                        break;
+
+
                     case 'posts':
-                        $posts = new Posts();
+                        $posts = new PostsController();
                         $posts->posts();
                         break;
 
-                    case 'post':
-                        $post = new Post();
-                        $post->post();
-                        break;
 
                     case 'create_post':
-                        $createPost = new CreatePost();
-                        $createPost->createPost();
+                        $createPost = new PostsController();
+                        $createPost->create();
                         break;
 
-                    case 'updatepost':
-                        $updatePost = new UpdatePost();
-                        $updatePost->updatePost();
+
+                    case 'update_image_post':
+                        $updateImagePost = new PostsController();
+                        $updateImagePost->update_image_post($request->get('id'));
                         break;
+
+
+                    case 'update_post':
+                        $updatePost = new PostsController();
+                        $updatePost->update($request->get('id'));
+                        break;
+
+                    case 'delete_post':
+                        $deletePost = new PostsController();
+                        $deletePost->delete($request->get('id'));
+                        break;
+
+                    case 'active_post':
+                        $activePost = new PostsController();
+                        $activePost->activate($request->get('id'));
+                        break;
+
+                    case 'desactive_post':
+                        $activePost = new PostsController();
+                        $activePost->desactivate($request->get('id'));
+                        break;
+
 
                     case 'comments':
-                        $comments = new Comments();
+                        $comments = new CommentsControllers();
                         $comments->comments();
                         break;
 
+
+
+                    case 'delete_comment':
+                        $comments = new CommentsControllers();
+                        $comments->delete($request->get('id'));
+                        break;
+
+                    case 'validate_comment':
+                        $validateComment = new CommentsControllers();
+                        $validateComment->validate($request->get('id'));
+                        break;
+
+
+                    case 'reject_comment':
+                        $rejectComment = new CommentsControllers();
+                        $rejectComment->reject($request->get('id'));
+                        break;
+
+
+
                     case 'users':
-                        $users = new Users();
+                        $users = new UsersController();
                         $users->users();
                         break;
 
                     case 'create_user':
-                        $createUser = new CreateUser();
-                        $createUser->createUser();
+                        $createUser = new UsersController();
+                        $createUser->create();
                         break;
 
 
                     case 'update_user':
-                        $updateUser = new UpdateUser();
-                        $updateUser->updateUser();
+                        $updateUser = new UsersController();
+                        $updateUser->update($request->get('id'));
+                        break;
+
+
+                    case 'update_image_user':
+                        $updateImageUser = new UsersController();
+                        $updateImageUser->update_image_user($request->get('id'));
+                        break;
+
+
+                    case 'delete_user':
+                        $deleteUser = new UsersController();
+                        $deleteUser->delete($request->get('id'));
                         break;
 
                     case 'logout':
-                        $logout = new Logout();
+                        $logout = new UsersController();
                         $logout->logout();
                         break;
 
@@ -133,20 +171,18 @@ class Router
 
 
                     case 'dashboard':
-                        $dashboard = new Dashboard();
+                        $dashboard = new DashboardController();
                         $dashboard->dashboard();
                         break;
 
 
 
 
-                    case 'admin':
-                        $admin = new Admin;
-                        $admin->admin();
-                        break;
+
+
 
                     case 'home':
-                        $home = new Home();
+                        $home = new HomeController();
                         $home->home();
                         break;
 
@@ -154,7 +190,7 @@ class Router
                         break;
                 }
             } else {
-                $home = new Home();
+                $home = new HomeController();
                 $home->home();
             }
         } catch (\Exception $ex) {
@@ -164,9 +200,6 @@ class Router
             $line = $ex->getLine();
 
             require('../templates/error.php');
-        } finally {
-
-            echo 'Une fatale erreur est survenue !';
         }
     }
 }

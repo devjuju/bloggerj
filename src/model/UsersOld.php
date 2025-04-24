@@ -2,23 +2,19 @@
 
 namespace App\Model;
 
-use App\Model\Model;
 
-class UsersModels extends Model
+class UsersOld extends Model
 {
 
     protected $id;
     protected $role;
-    protected $avatar;
+    protected $image;
     protected $username;
     protected $lastname;
     protected $firstname;
     protected $email;
     protected $password;
-
     protected $status;
-
-
 
     public function __construct($data = null)
     {
@@ -26,7 +22,7 @@ class UsersModels extends Model
         $this->table = 'users';
 
         $this->setId($data['id'] ?? null);
-        $this->setAvatar($data['avatar'] ?? null);
+        $this->setImage($data['image'] ?? null);
         $this->setUsername($data['username'] ?? 'null');
         $this->setLastname($data['lastname'] ?? null);
         $this->setFirstname($data['firstname'] ?? null);
@@ -53,14 +49,14 @@ class UsersModels extends Model
         $this->id = $id;
     }
 
-    public function getAvatar()
+    public function getImage()
     {
-        return $this->avatar;
+        return $this->image;
     }
 
-    public function setAvatar($avatar)
+    public function setImage($image)
     {
-        $this->avatar = $avatar;
+        $this->image = $image;
     }
 
     public function getUsername()

@@ -2,60 +2,53 @@
 
 namespace App\Core;
 
-
-
 class Auth
 {
 
-    public static $auth;
 
-
-
-    public function __construct()
+    public static function start(): void
     {
-        $this->auth = &$_SESSION;
-    }
-
-
-
-
-    public static function set($name, $key, $value)
-    {
-        self::$auth[$name][$key] = $value;
-    }
-
-    public static function setMessage($message, $class, $title, $content, $value)
-    {
-        self::$auth[$message][$class][$title][$content] = $value;
-    }
-
-
-    public static function get($name, $key)
-    {
-        if (isset(self::$auth[$name][$key])) {
-            return self::$auth[$name][$key];
+        if (session_start() === PHP_SESSION_NONE) {
+            session_start();
         }
-        return null;
     }
 
-    public static function show($name, $key)
+
+    public static function get(string $name, string $key)
     {
-        if (isset(self::$auth[$name][$key])) {
-            $value = self::get($name, $key);
-            self::remove($name, $key);
-            return $value;
+        // self::start();
+        return isset($_SESSION[$name][$key]) ? $_SESSION[$name][$key] : null;
+    }
+
+
+    public static function set(string $name, string $key, $value): void
+    {
+        // self::start();
+        $_SESSION[$name][$key] = $value;
+    }
+
+
+    public static function delete(string $name, string $key): void
+    {
+        //self::start();
+        if (isset($_SESSION[$name][$key])) {
+            unset($_SESSION[$name][$key]);
         }
-        return null;
     }
 
-    public static function remove($name, $key)
+    public static function has(string $name, $key = false): bool
     {
-        unset(self::$auth[$name][$key]);
+        //self::start();
+        if ($key) {
+            return isset($_SESSION[$name][$key]);
+        }
+        return isset($_SESSION[$name]);
     }
 
-    public static function stop()
+    public static function destroy(): void
     {
-        unset(self::$auth);
+        // self::start();
+        session_unset();
         session_destroy();
     }
 }

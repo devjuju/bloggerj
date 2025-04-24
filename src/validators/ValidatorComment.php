@@ -1,61 +1,72 @@
 <?php
 
-namespace App\Validators;
+declare(strict_types=1);
 
+namespace App\Validators;
 
 use App\Core\Validator;
 
 class ValidatorComment extends Validator
 {
-    public $data;
-    public function __construct($data)
+    /** @var object Données du formulaire, typiquement un objet Comment */
+    public object $data;
+
+    public function __construct(object $data)
     {
         $this->data = $data;
     }
 
-    public function checkData()
+    /**
+     * Vérifie la validité des données du commentaire.
+     *
+     * @return true|array<string, string> Retourne true si tout est valide, sinon un tableau d'erreurs.
+     */
+    public function checkData(): true|array
     {
-        $resultAuthor = $this->checkAuthor($this->data->getAuthor());
+        $resultContent = $this->checkComment($this->data->getContent());
+        $resultStatus = $this->checkStatus($this->data->getStatus());
 
-        $resultComment = $this->checkComment($this->data->getComment());
-
-        if ($resultAuthor && $resultComment === true) {
-            return true;
-        } else {
-            $errors = [
-                'author' => $resultAuthor,
-                'comment' => $resultComment,
-            ];
-            return $errors;
-
-        }
-
-    }
-
-   
-
-    public function checkAuthor($author)
-    {
-        if(empty($author)) {
-            return "Le nom est requis";
-        } elseif ($this->isSmallThan($author, 5)) {
-            return "c'est plus petit que 5 caractères";
-        }elseif ($this->isRespectedPattern($author)){
-            return "Le nom doit contenir seulement des caractères";
-        }else {
+        if ($resultContent === true && $resultStatus === true) {
             return true;
         }
+
+        return [
+            'content' => $resultContent === true ? '' : $resultContent,
+            'status' => $resultStatus === true ? '' : $resultStatus,
+        ];
     }
 
-    public function checkComment($comment)
+    /**
+     * Vérifie le contenu du commentaire.
+     *
+     * @param string|null $content
+     * @return true|string
+     */
+    public function checkComment(?string $content): true|string
     {
-        if(empty($comment)) {
+        if (empty($content)) {
             return "Le commentaire est requis";
-        } elseif ($this->isSmallThan($comment, 15)) {
-            return "15 caractères minimum";
-        }else {
-            return true;
         }
+
+        if ($this->isSmallerThan($content, 15)) {
+            return "15 caractères minimum";
+        }
+
+        return true;
     }
 
+    /**
+     * Vérifie le statut du commentaire.
+     *
+     * @param string|null $status
+     * @return true|string
+     */
+    public function checkStatus(?string $status): true|string
+    {
+        if (empty($status)) {
+            return "valider le commentaire";
+        }
+
+        return true;
+    }
 }

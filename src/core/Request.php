@@ -1,12 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Core;
 
 class Request
 {
-    private $_post;
-    private $_get;
 
+    private array $_post;
+
+
+    private array $_get;
 
     public function __construct()
     {
@@ -14,31 +18,22 @@ class Request
         $this->_get = $_GET;
     }
 
-    public function post($key = null)
+
+    public function post(?string $key = null): mixed
     {
         return $this->checkGlobal($this->_post, $key);
-        if (empty(filter_var(stripslashes($this->_post, $key), FILTER_SANITIZE_SPECIAL_CHARS))) {
-            $this->checkGlobal($this->_post, $key);
-        }
     }
 
-    public function get($key = null)
+    public function get(?string $key = null): mixed
     {
         return $this->checkGlobal($this->_get, $key);
-        if (empty(filter_var(stripslashes($this->_get, $key), FILTER_SANITIZE_SPECIAL_CHARS))) {
-            $this->checkGlobal($this->_get, $key);
-        }
     }
-    /* vérifier la requête en lui passant une clé */
-    /* get['action'], dans le router */
-    /* index.php?action=contact */
-    private function checkGlobal($global, $key = null)
-    {   /* si la clé de la requête existe */
-        if ($key) {
-            if (isset($global[$key])) {
-                return $global[$key];
-            }
-            return null;
+
+
+    private function checkGlobal(array $global, ?string $key = null): mixed
+    {
+        if ($key !== null) {
+            return $global[$key] ?? null;
         }
         return $global;
     }

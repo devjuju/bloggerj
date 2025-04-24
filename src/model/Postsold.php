@@ -2,7 +2,8 @@
 
 namespace App\Model;
 
-class PostModels extends Model
+
+class Postsold extends Model
 {
     protected $id;
     protected $users_id;
@@ -11,14 +12,16 @@ class PostModels extends Model
     protected $category;
     protected $excerpt;
     protected $content;
-    protected $thumbnail_image;
-    protected $featured_image;
+    protected $image;
     protected $created_at;
     protected $active;
     protected $status;
 
+
+
     public function __construct($data = null)
     {
+
 
         $this->table = 'posts';
 
@@ -29,12 +32,12 @@ class PostModels extends Model
         $this->setCategory($data['category'] ?? null);
         $this->setExcerpt($data['excerpt'] ?? null);
         $this->setContent($data['content'] ?? null);
-        $this->setThumbnailImage($data['thumbnail_image'] ?? null);
-        $this->setFeaturedImage($data['featured_image'] ?? null);
+        $this->setImage($data['image'] ?? null);
         $this->setCreatedAt($data['created_at'] ?? null);
         $this->setActive($data['active'] ?? null);
         $this->setStatus($data['status'] ?? null);
     }
+
 
     public function getId()
     {
@@ -64,6 +67,7 @@ class PostModels extends Model
     {
         $this->author = $author;
     }
+
 
     public function getTitle()
     {
@@ -106,30 +110,23 @@ class PostModels extends Model
         $this->content = $content;
     }
 
-    public function getThumbnailImage()
+    public function getImage()
     {
-        return $this->thumbnail_image;
+        return $this->image;
     }
 
-    public function setThumbnailImage($thumbnail_image)
+    public function setImage($image)
     {
-        $this->thumbnail_image = $thumbnail_image;
+        $this->image = $image;
     }
 
-    public function getFeaturedImage()
-    {
-        return $this->featured_image;
-    }
 
-    public function setFeaturedImage($featured_image)
-    {
-        $this->featured_image = $featured_image;
-    }
 
     public function getCreatedAt()
     {
         return $this->created_at;
     }
+
 
     public function setCreatedAt($created_at)
     {
