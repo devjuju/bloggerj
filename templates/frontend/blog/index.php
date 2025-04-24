@@ -1,4 +1,9 @@
-<?php $title = "Blog"; ?>
+<?php
+
+use App\Core\Auth;
+use App\Core\DateFormatter;
+
+$title = "Blog"; ?>
 <?php ob_start();
 ?>
 
@@ -32,19 +37,18 @@
           <div class="col pb-3">
             <article class="card card-article border-0 ">
               <div class="position-relative">
+
+
+
+
                 <?php
 
 
-
-                $session = &$_SESSION;
-
-
-
-                if (isset($session['auth']['role'])) {
+                if (Auth::get('auth', 'role')) {
                 ?>
 
-                  <?php if ($session['auth']['role'] === 'administrateur') { ?>
-                    <a href="#" class="btn btn-icon-pencil-circle-secondary  position-absolute top-0 end-0 zindex-5 me-3 mt-3">
+                  <?php if (Auth::get('auth', 'role') === 'administrateur') { ?>
+                    <a href="index.php?action=update_post&id=<?= $post->id ?>" class="btn btn-icon-pencil-circle-secondary  position-absolute top-0 end-0 zindex-5 me-3 mt-3">
                       <i class="bi bi-pencil-fill"></i>
                     </a>
                   <?php } else { ?>
@@ -55,23 +59,23 @@
 
                 <?php } ?>
 
-                <img src="images/<?= $post->thumbnail_image ?>" class="card-img-top" alt="Image">
+                <img src="uploads/<?= $post->image ?>" class="card-img-top" alt="Image">
               </div>
               <div class="card-body">
                 <div class="marging-top-20 marging-bottom-10">
                   <span class="fs-sm text-primary"><?= $post->category ?></span>
                 </div>
                 <h3>
-                  <a class="card-post-title" href="index.php?action=post"><?= $post->title ?></a>
+                  <a class="card-post-title" href="index.php?action=post&id=<?= $post->id ?>"><?= $post->title ?></a>
                 </h3>
                 <div class="d-flex flex-row bd-highlight mb-3">
                   <div class="meta-content-blog bd-highlight">
                     <i class="bi bi-person-fill fs-base me-1"></i>
-                    <span class="fs-sm"><?= $post->author ?></span>
+                    <span class="fs-sm"><?= $post->users_id ?></span>
                   </div>
                   <div class="meta-content-blog bd-highlight">
                     <i class="bi bi-clock-fill fs-base me-1"></i>
-                    <span class="fs-sm"><?= $post->created_at ?></span>
+                    <span class="fs-sm"><?= DateFormatter::enFrancais($post->created_at); ?></span>
                   </div>
                 </div>
                 <p class="running-text"><?= $post->excerpt ?></p>
@@ -101,15 +105,15 @@
           <p class="running-text">Retrouver les dernières nouvelles et inspirations sur le blog.</p>
           <div class="d-flex">
             <!-- Facebook -->
-            <a href="#" class="btn btn-icon-secondary btn-facebook" aria-label="Facebook">
+            <a href="#" class="btn btn-icon-social-secondary btn-facebook" aria-label="Facebook">
               <i class="bi bi-facebook"></i>
             </a>
             <!-- Twitter -->
-            <a href="#" class="btn btn-icon-secondary btn-twitter" aria-label="Twitter">
+            <a href="#" class="btn btn-icon-social-secondary btn-twitter" aria-label="Twitter">
               <i class="bi bi-twitter"></i>
             </a>
             <!-- Instagram -->
-            <a href="#" class="btn btn-icon-secondary btn-instagram" aria-label="Instagram">
+            <a href="#" class="btn btn-icon-social-secondary btn-instagram" aria-label="Instagram">
               <i class="bi bi-instagram"></i>
             </a>
           </div>

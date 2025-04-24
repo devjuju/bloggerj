@@ -50,13 +50,13 @@ use App\Core\Messages;
               <!--begin::Form group-->
               <div class="col-sm-12 form-group-style">
                 <label class="form-label fs-base" for="email">Email</label>
-                <input type="email" placeholder="" id="email" name="login[email]" value="<?= isset($register) ? $register->getEmail() : '' ?>">
+                <input type="email" placeholder="" id="email" name="login[email]" value="<?= isset($login) ? $login->getEmail() : '' ?>">
                 <?= isset($controle["email"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["email"] . "</p>" : '' ?>
               </div>
               <!--begin::Form group-->
               <div class="col-sm-12 form-group-style">
                 <div class="form-group-password"> <label for="password" class="form-label fs-base">Mot de passe</label>
-                  <input type="password" id="password" name="login[password]" value="<?= isset($register) ? $register->getPassword() : '' ?>">
+                  <input type="password" id="password" name="login[password]" value="<?= isset($login) ? $login->getPassword() : '' ?>">
                   <?= isset($controle["password"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["password"] . "</p>" : '' ?>
                 </div>
               </div>
@@ -71,12 +71,10 @@ use App\Core\Messages;
                   <button type="submit" class="btn btn-primary">Envoyer</button>
                 </div>
 
-                <a href="index.php?action=account" class="d-grid gap-2 btn btn-outline-primary mb-3 mt-4">
-                  Aperçu du compte
-                </a>
+                <br>
 
 
-                <a href="#" class="btn btn-link btn-lg w-100 text-primary">Oubli du mot de passe ?</a>
+                <a href="#" class="btn btn-link btn-lg w-100 text-primary">Oubli du mot de passe ? (x)</a>
 
               </div>
             </div>

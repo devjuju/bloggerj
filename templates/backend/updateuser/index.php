@@ -1,4 +1,8 @@
-<?php $title = "Modifier l'utilisateur"; ?>
+<?php
+
+use App\Core\Auth;
+
+$title = "Modifier l'utilisateur"; ?>
 <?php ob_start();
 ?>
 
@@ -31,13 +35,15 @@
         <div class="offcanvas-body p-4">
             <div class="swiper-wrapper">
                 <div class="swiper-slide h-auto spacing-col-padding-top-100">
+
                     <div class="d-table position-relative mx-auto avatar-offcanvas">
                         <img src="images/avatar.png" class="d-block rounded-circle" width="120" alt="John Doe">
                     </div>
                     <div class="profil-offcanvas">
-                        <h5>Isabella Bocouse</h5>
-                        <p>bocouse@example.com</p>
+                        <h5><?= Auth::get('auth', 'username'); ?></h5>
+                        <p><?= Auth::get('auth', 'email'); ?></p>
                     </div>
+
                     <!-- Flush list group -->
                     <div class="list-group list-group-flush">
                         <a href="#" class="list-group-item list-group-item-action d-flex align-items-center active">
@@ -91,7 +97,7 @@
                     <a class="breadcrumb-links" href="index.php?action=admin"><i class="bi bi-speedometer2 fs-lg me-1"></i>Tableau de bord</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a class="breadcrumb-links" href="index.php?action=posts">Articles</a>
+                    <a class="breadcrumb-links" href="index.php?action=users">Utilisateurs</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">Modifier le profil de l'utilisateur</li>
             </ol>
@@ -117,62 +123,51 @@
                         <div class="row g-4">
                             <h3 class="titre-h5">Informations principales</h3>
                             <!--begin::Form group-->
-                            <div class="col-sm-12 form-group-style">
-                                <label class="form-label fs-base" for="sujet">Pseudo</label>
-                                <input type="text" placeholder="" id="sujet" name="contact[sujet]" value="">
-
+                            <div class="col-sm-12 form-group-style2">
+                                <label class="form-label fs-base" for="username">Pseudo</label>
+                                <input class="form-control" type="text" id="username" name="update_user[username]" value="<?= isset($updateUser) ? $updateUser->getUsername() : $user->username ?>">
+                                <?= isset($controle['username']) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["username"] . "</p>" : '' ?>
                             </div>
-
                             <!--begin::Form group-->
-                            <div class="col-sm-6 form-group-style">
+                            <div class="col-sm-6 form-group-style2">
                                 <label class="form-label fs-base" for="lastname">Nom</label>
-                                <input type="text" id="lastname" name="contact[lastname]" placeholder="Entrer un nom" value="<?= isset($contact) ? $contact->getLastname() : '' ?>">
-                                <?= isset($controle["lastname"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["lastname"] . "</p>" : '' ?>
+                                <input class="form-control" type="text" id="lastname" name="update_user[lastname]" value="<?= isset($updateUser) ? $updateUser->getLastname() : $user->lastname ?>">
+                                <?= isset($controle['lastname']) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["lastname"] . "</p>" : '' ?>
                             </div>
                             <!--end::Form group-->
                             <!--begin::Form group-->
-                            <div class="col-sm-6 form-group-style">
+                            <div class="col-sm-6 form-group-style2">
                                 <label class="form-label fs-base" for="firstname">Prénom</label>
-                                <input type="text" id="firstname" name="contact[firstname]" placeholder="" value="<?= isset($contact) ? $contact->getFirstname() : '' ?>">
-                                <?= isset($controle["firstname"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["firstname"] . "</p>" : '' ?>
+                                <input class="form-control" type="text" id="firstname" name="update_user[firstname]" value="<?= isset($updateUser) ? $updateUser->getFirstname() : $user->firstname ?>">
+                                <?= isset($controle['firstname']) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["firstname"] . "</p>" : '' ?>
                             </div>
+
 
                             <div class="col-sm-12 form-group-style">
 
-
                                 <!--begin::Conditions-->
-                                <div class="d-flex flex-wrap align-items-center text-gray-600 gap-5 mb-7">
-                                    <!--begin::Label-->
-                                    <label class="form-label">Role de l'utilisateur :</label>
-                                    <!--end::Label-->
+                                <div class="col-sm-12 form-group-style2">
+                                    <label class="form-label fs-base" for="role">Role</label>
+                                    <select class="form-select" id="role" name="update_user[role]" value="<?= isset($updateUser) ? $updateUser->getRole() : $user->role ?>">
+                                        <?php if ($user->role  === "utilisateur"): ?>
+                                            <option>utilisateur</option>
+                                            <option>administrateur</option>
+                                        <?php else: ?>
+                                            <option>administrateur</option>
+                                            <option>utilisateur</option>
+                                        <?php endif; ?>
 
-
-                                    <!--begin::Radio-->
-                                    <div class="form-check form-check-custom form-check-solid">
-                                        <input class="form-check-input" type="radio" name="conditions" value="" id="all_conditions" checked="checked">
-                                        <label class="form-check-label" for="all_conditions">
-                                            utilisateur
-                                        </label>
-                                    </div>
-                                    <!--end::Radio-->
-
-                                    <!--begin::Radio-->
-                                    <div class="form-check form-check-custom form-check-solid">
-                                        <input class="form-check-input" type="radio" name="conditions" value="" id="any_conditions">
-                                        <label class="form-check-label" for="any_conditions">
-                                            administrateur
-                                        </label>
-                                    </div>
-                                    <!--end::Radio-->
+                                    </select>
+                                    <?= isset($controle['role']) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["role"] . "</p>" : '' ?>
                                 </div>
                                 <!--end::Conditions-->
                             </div>
 
                             <!--begin::Form group-->
-                            <div class="col-sm-12 form-group-style">
+                            <div class="col-sm-12 form-group-style2">
                                 <label class="form-label fs-base" for="email">Email</label>
-                                <input type="email" placeholder="" id="email" name="contact[email]" value="">
-
+                                <input class="form-control" type="email" id="email" name="update_user[email]" value="<?= isset($updateUser) ? $updateUser->getEmail() : $user->email ?>">
+                                <?= isset($controle['email']) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["email"] . "</p>" : '' ?>
                             </div>
 
 
@@ -181,38 +176,18 @@
 
                         <div class="row g-4 pt-5">
                             <h3 class="titre-h5">Sécurité du compte</h3>
-                            <div class="align-items-end mb-2 row row-cols-sm-2 row-cols-1 pt-4">
-
-                                <div class="mb-2 col form-group-style">
-                                    <label class="form-label" for="account-password">Mot de passe actuel</label>
-                                    <input id="account-password" required="" type="password" value="motdepasse">
-
-
+                            <div class="col-sm-12 form-group-style">
+                                <!--begin::Form group-->
+                                <div class="col-sm-12 form-group-style">
+                                    <div class="form-group-password"> <label for="password" class="form-label fs-base">Mot de passe</label>
+                                        <input type="password" id="password" name="update_user[password]" value="<?= isset($updateUser) ? $updateUser->getPassword() : '' ?>">
+                                        <?= isset($controle["password"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["password"] . "</p>" : '' ?>
+                                    </div>
                                 </div>
-
-                                <div class="mb-2 col">
-                                    <a class="text-primary d-inline-block mb-2" href="#">Oubli du mot de passe?</a>
-                                </div>
+                                <!--begin::Form group-->
                             </div>
-
-                            <div class="align-items-end mb-2 row row-cols-sm-2 row-cols-1">
-                                <div class="mb-3 col form-group-style">
-                                    <label class="form-label" for="new_password">Nouveau mot de passe</label>
-                                    <input id="new_password" required="" type="password">
-                                </div>
-
-                                <div class="mb-3 col form-group-style">
-                                    <label class="form-label" for="confirm_newpass">Confirmer le nouveau mot de passe </label>
-                                    <input id="confirm_newpass" required="" type="password">
-                                </div>
-
-
-
-                            </div>
-
-
-
                         </div>
+
 
 
                     </div>
@@ -225,25 +200,16 @@
                                 <div class="card-body">
                                     <div class="text-center">
                                         <h4 class="titre-h4">Mettre à jour</h4>
-                                        <div class="d-flex justify-content-center bd-highlight mb-3">
-                                            <div class="meta-content-post bd-highlight">
-                                                <i class="bi bi-person-fill fs-base me-1"></i>
-                                                <span class="fs-sm">Auteur</span>
-                                            </div>
-                                            <div class="meta-content-post bd-highlight">
-                                                <i class="bi bi-clock-fill fs-base me-1"></i>
-                                                <span class="fs-sm">Sep 16, 2023</span>
-                                            </div>
-                                        </div>
+                                        <br>
 
                                     </div>
 
 
                                     <div class="d-grid gap-2">
                                         <a href="index.php?action=posts" class="btn btn-outline-primary mb-3">
-                                            Supprimer l'utilisateur
+                                            Annuler
                                         </a>
-                                        <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+                                        <button type="submit" class="btn btn-primary">Modifier</button>
                                     </div>
 
                                 </div>
@@ -252,22 +218,16 @@
                                 <div class="card-body text-center pt-0">
 
                                     <div class="col-sm-12 form-group-style">
-                                        <img src="images/profil-user-defaut-img.svg" class="rounded-circle" alt="Image" width="150">
-                                        <br> <br>
-                                        <label for="formFile" class="form-label"></label>
-                                        <input type="file" id="formFile">
+                                        <img src="uploads/<?= $user->image ?>" class="rounded-circle img-fluid" alt="Image">
                                         <br><br>
-                                        <!--begin::Description-->
-                                        <div class="running-text">
-                                            Définissez l’avatar de l'utilisateur. Seuls les fichiers image *.png, *.jpg et *.jpeg sont acceptés</div>
-                                        <!--end::Description-->
+
+                                        <div class="d-grid gap-2">
+                                            <a href="index.php?action=update_image_user&id=<?= $user->id ?>" class="btn btn-outline-primary mb-3">
+                                                modifier la photo de profil
+                                            </a>
+
+                                        </div>
                                     </div>
-
-
-
-
-
-
                                 </div>
                             </div>
                         </div>

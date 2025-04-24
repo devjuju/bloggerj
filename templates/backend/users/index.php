@@ -1,4 +1,8 @@
-<?php $title = "Utilisateurs"; ?>
+<?php
+
+use App\Core\Auth;
+
+$title = "Utilisateurs"; ?>
 <?php ob_start();
 ?>
 
@@ -29,13 +33,15 @@
     <div class="offcanvas-body p-4">
       <div class="swiper-wrapper">
         <div class="swiper-slide h-auto spacing-col-padding-top-100">
+
           <div class="d-table position-relative mx-auto avatar-offcanvas">
-            <img src="images/avatar.png" class="d-block rounded-circle" width="120" alt="John Doe">
+            <img src="uploads/<?= Auth::get('auth', 'image') ?>" class="d-block rounded-circle" width="120" alt="">
           </div>
           <div class="profil-offcanvas">
-            <h5>Isabella Bocouse</h5>
-            <p>bocouse@example.com</p>
+            <h5><?= Auth::get('auth', 'username'); ?></h5>
+            <p><?= Auth::get('auth', 'email'); ?></p>
           </div>
+
           <!-- Flush list group -->
           <div class="list-group list-group-flush">
             <a href="index.php?action=posts" class="list-group-item list-group-item-action d-flex align-items-center">
@@ -86,7 +92,7 @@
     <nav class="container py-4 mb-lg-2" aria-label="breadcrumb">
       <ol class="breadcrumb pt-lg-3 mb-0">
         <li class="breadcrumb-item">
-          <a class="breadcrumb-links" href="index.php?action=admin"><i class="bi bi-speedometer2 fs-lg me-1"></i>Tableau de bord</a>
+          <a class="breadcrumb-links" href="index.php?action=dashboard"><i class="bi bi-speedometer2 fs-lg me-1"></i>Tableau de bord</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">Utilisateurs</li>
       </ol>
@@ -106,95 +112,65 @@
         <!-- Content -->
 
         <div class="col-lg-7">
-          <div class="py-4">
 
-            <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3  spacing-content-padding-top-40">
-              <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
-                <div class="d-flex align-items-center me-3">
-                  <img src="images/avatar.png" class="rounded-circle" width="48" alt="Avatar">
-                  <div class="ps-3">
-                    <h6 class="titre-h6 mb-0">Esther Howard</h6>
-                    <span class="running-text">bocouse@example.com</span>
+          <?php foreach ($users as $user): ?>
+            <div class="py-4">
+
+              <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3  spacing-content-padding-top-40">
+                <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
+                  <div class="d-flex align-items-center me-3">
+                    <img src="uploads/<?= $user->image ?>" class="rounded-circle" width="48" alt="Avatar">
+                    <div class="ps-3">
+                      <h6 class="titre-h6 mb-0"><?= $user->username ?></h6>
+                      <span class="running-text"><?= $user->email ?></span>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="d-flex align-items-center position-relative ps-md-3  mb-2">
+
+                  <div class="d-flex">
+
+                    <?php if ($user->role  === "administrateur"): ?>
+                      <a href="index.php?action=blog" class="btn btn-dark spacing-element-marging-right-10">
+                        administrateur
+                      </a>
+                    <?php else: ?>
+                      <a href="#" class="btn btn-outline-dark spacing-element-marging-right-10">
+                        administrateur
+
+                      <?php endif; ?>
+
+
+                      <?php if ($user->role  === "utilisateur"): ?>
+                        <a href="index.php?action=blog" class="btn btn-dark spacing-element-marging-right-10">
+                          Utilisateur
+                        </a>
+                      <?php else: ?>
+                        <a href="#" class="btn btn-outline-dark spacing-element-marging-right-10">
+                          Utilisateur
+
+                        </a>
+                      <?php endif; ?>
+
+                      <!-- Modifier -->
+                      <a href="index.php?action=update_user&id=<?= $user->id ?>" class="btn btn-icon-circle-primary">
+                        <i class="bi bi-pencil-fill"></i>
+                      </a>
+                      <!-- Supprimer -->
+                      <a href="index.php?action=delete_user&id=<?= $user->id ?>" class="btn btn-icon-circle-secondary">
+                        <i class="bi bi-trash3-fill"></i>
+                      </a>
                   </div>
                 </div>
-
               </div>
-              <div class="d-flex align-items-center position-relative ps-md-3  mb-2">
 
-                <div class="d-flex">
 
-                  <!-- Aperçu -->
-                  <a href="index.php?action=update_user" class="btn btn-outline-dark spacing-element-marging-right-10">
-                    Profil
 
-                  </a>
 
-                  <!-- Aperçu -->
-                  <a href="index.php?action=blog" class="btn btn-dark spacing-element-marging-right-10">
-                    Utilisateur
-
-                  </a>
-                  <!-- Supprimer -->
-                  <a href="#" class="btn btn-icon-circle-primary">
-                    <i class="bi bi-pencil-fill"></i>
-                  </a>
-                  <!-- Supprimer -->
-                  <a href="#" class="btn btn-icon-circle-secondary">
-                    <i class="bi bi-trash3-fill"></i>
-                  </a>
-                </div>
-              </div>
             </div>
+          <?php endforeach; ?>
 
-
-
-
-          </div>
-
-          <div class="py-4">
-
-            <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3  spacing-content-padding-top-40">
-              <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
-                <div class="d-flex align-items-center me-3">
-                  <img src="images/avatar.png" class="rounded-circle" width="48" alt="Avatar">
-                  <div class="ps-3">
-                    <h6 class="titre-h6 mb-0">Esther Howard</h6>
-                    <span class="running-text">bocouse@example.com</span>
-                  </div>
-                </div>
-
-              </div>
-              <div class="d-flex align-items-center position-relative ps-md-3  mb-2">
-
-                <div class="d-flex">
-
-                  <!-- Aperçu -->
-                  <a href="index.php?action=update_user" class="btn btn-outline-dark spacing-element-marging-right-10">
-                    Profil
-
-                  </a>
-
-                  <!-- Aperçu -->
-                  <a href="index.php?action=blog" class="btn btn-dark spacing-element-marging-right-10 ">
-                    Administrateur
-
-                  </a>
-                  <!-- Supprimer -->
-                  <a href="#" class="btn btn-icon-circle-primary">
-                    <i class="bi bi-pencil-fill"></i>
-                  </a>
-                  <!-- Supprimer -->
-                  <a href="#" class="btn btn-icon-circle-secondary">
-                    <i class="bi bi-trash3-fill"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-
-
-
-          </div>
         </div>
 
         <!-- Sharing -->
@@ -212,17 +188,27 @@
             <!-- Basic card example -->
             <div class="card card-background">
               <div class="card-body">
+
+
+
+
                 <div class="d-table position-relative mx-auto">
-                  <img src="images/avatar.png" class="d-block rounded-circle" width="90" alt="John Doe">
+                  <img src="uploads/<?= Auth::get('auth', 'image') ?>" class="d-block rounded-circle" width="90" alt="John Doe">
                 </div>
+                <br>
                 <div class="text-center">
-                  <h5>Isabella Bocouse</h5>
-                  <p>bocouse@example.com</p>
+                  <h5><?= Auth::get('auth', 'username'); ?></h5>
+                  <p><?= Auth::get('auth', 'email'); ?></p>
                 </div>
 
                 <a href="index.php?action=account" class="d-grid gap-2 btn btn-outline-primary mb-3">
                   Voir mon compte
                 </a>
+
+
+
+
+
 
                 <a href="index.php?action=create_user" class="d-grid gap-2 btn btn-primary">
                   Ajouter un utilisateur

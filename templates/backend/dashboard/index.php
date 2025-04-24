@@ -1,4 +1,7 @@
-<?php $title = "Tableau de bord"; ?>
+<?php $title = "Tableau de bord";
+
+use App\Core\Auth;
+?>
 <?php ob_start();
 ?>
 
@@ -31,11 +34,11 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide h-auto spacing-col-padding-top-100">
                     <div class="d-table position-relative mx-auto avatar-offcanvas">
-                        <img src="images/avatar.png" class="d-block rounded-circle" width="120" alt="John Doe">
+                        <img src="uploads/<?= Auth::get('auth', 'image') ?>" class="d-block rounded-circle" width="120" alt="">
                     </div>
                     <div class="profil-offcanvas">
-                        <h5>Isabella Bocouse</h5>
-                        <p>bocouse@example.com</p>
+                        <h5><?= Auth::get('auth', 'username'); ?></h5>
+                        <p><?= Auth::get('auth', 'email'); ?></p>
                     </div>
                     <!-- Flush list group -->
                     <div class="list-group list-group-flush">
@@ -62,6 +65,8 @@
                             Utilisateurs
                         </a>
 
+
+
                     </div>
 
 
@@ -85,14 +90,19 @@
 
     <section class="container-fluid p-5 bg-light-subtle ">
 
+
+
         <div class="container spacing-col-padding-top-100 spacing-col-padding-bottom-150">
 
             <div class="d-table position-relative mx-auto spacing-element-marging-bottom-20">
-                <img src="images/avatar.png" class="d-block rounded-circle" width="100" alt="John Doe">
+                <img src="uploads/<?= Auth::get('auth', 'image') ?>" class="d-block rounded-circle" width="100" alt="">
             </div>
             <div class="text-center spacing-content-marging-bottom-40">
                 <!-- Page title -->
-                <h1 class="titre-section">Bienvenue Admin</h1>
+                <h1 class="titre-section">Bienvenue <?= Auth::get('auth', 'username') . ' ' . Auth::get('auth', 'email'); ?></h1>
+
+
+
                 <h2 class="titre-h3">Outils pour gérer votre blog</h2>
                 <p class="running-text pb-4 mb-2 mb-lg-3">Mise en place d’une interface vous accordant la possibilité de gérer
                     tout le contenu publié du blog.</p>

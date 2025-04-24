@@ -1,10 +1,12 @@
 <!-- Top navbar de connection admin -->
 <?php
-$session = &$_SESSION;
-if (isset($session['auth']['role'])) {
+
+use App\Core\Auth;
+
+if (Auth::get('auth', 'role')) {
 ?>
 
-    <?php if ($session['auth']['role'] === 'administrateur') { ?>
+    <?php if (Auth::get('auth', 'role') === 'administrateur') { ?>
         <nav class="navbar bg-extra-light-subtle">
             <div class="container-fluid d-flex justify-content-between align-items-center w-100">
                 <div class="nav-link d-flex align-items-center p-0">

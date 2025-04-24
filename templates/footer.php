@@ -11,15 +11,15 @@
                 <p>Une développeuse web passionnée et créative en vue d’évolution </p>
                 <div class="d-flex">
                     <!-- Facebook -->
-                    <a href="#" class="btn btn-icon-secondary btn-facebook" aria-label="Facebook">
+                    <a href="#" class="btn btn-icon-social-secondary btn-facebook" aria-label="Facebook">
                         <i class="bi bi-facebook"></i>
                     </a>
                     <!-- Twitter -->
-                    <a href="#" class="btn btn-icon-secondary btn-twitter" aria-label="Twitter">
+                    <a href="#" class="btn btn-icon-social-secondary btn-twitter" aria-label="Twitter">
                         <i class="bi bi-twitter"></i>
                     </a>
                     <!-- Instagram -->
-                    <a href="#" class="btn btn-icon-secondary btn-instagram" aria-label="Instagram">
+                    <a href="#" class="btn btn-icon-social-secondary btn-instagram" aria-label="Instagram">
                         <i class="bi bi-instagram"></i>
                     </a>
                 </div>
@@ -38,10 +38,12 @@
                     </li>
 
                     <?php
-                    $session = &$_SESSION;
-                    if (isset($session['auth']['role'])) {
+
+                    use App\Core\Auth;
+
+                    if (Auth::get('auth', 'role')) {
                     ?>
-                        <?php if ($session['auth']['role'] === 'administrateur') { ?>
+                        <?php if (Auth::get('auth', 'role') === 'administrateur') { ?>
                             <li class="list-group-item d-flex align-items-center">
                                 <i class="bi bi-wrench-adjustable-circle fs-xl me-2"></i>
 

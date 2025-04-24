@@ -34,6 +34,8 @@
 
   <?= $content ?>
 
+  <!-- Custom scripts for this template -->
+  <script src="js/addimage.js"></script>
 
 
 

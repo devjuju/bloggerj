@@ -28,9 +28,9 @@
             <div class="pe-lg-1 ms-lg-auto">
                 <a href="index.php?action=logout" class="btn btn-primary spacing-element-marging-right-10 ">
                     Se déconnecter
-
                 </a>
             </div>
         </div>
+
     </div>
 </header>

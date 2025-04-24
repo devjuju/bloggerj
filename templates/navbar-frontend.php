@@ -17,29 +17,39 @@
         <?php
 
         use App\Core\Auth;
-        use App\Core\Session;
 
-        $session = &$_SESSION;
-
-
-
-        if (isset($session['auth']['role'])) {
+        if (Auth::get('auth', 'role')) {
         ?>
           <li class="nav-item">
-            <?php if ($session['auth']['role'] === 'administrateur') { ?>
+            <?php if (Auth::get('auth', 'role') === 'administrateur') { ?>
+
               <div class="d-flex align-items-center position-relative ps-md-3 pe-lg-3 mb-2">
 
                 <img src="images/profil-user-defaut-img.svg" class="rounded-circle" width="48" alt="Avatar">
-                <p>wjjwj</p>
-
+                <div class="ps-2">
+                  <div class="fs-xs lh-1 opacity-60">Hello,</div>
+                  <div class="fs-sm"><?= Auth::get('auth', 'username'); ?></div>
+                </div>
 
               </div>
+
+
+
+
             <?php } else { ?>
+
+
               <div class="d-flex align-items-center position-relative ps-md-3 pe-lg-3 mb-2">
 
                 <img src="images/profil-user-defaut-img.svg" class="rounded-circle" width="48" alt="Avatar">
+                <div class="ps-2">
+                  <div class="fs-xs lh-1 opacity-60">Hello,</div>
+                  <div class="fs-sm"><?= Auth::get('auth', 'username'); ?></div>
+                </div>
 
               </div>
+
+
           </li>
         <?php } ?>
         <li class="nav-item">
@@ -56,27 +66,6 @@
         </div>
       <?php } ?>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
     <nav id="navbarCollapse5" class="collapse navbar-collapse order-lg-2">
       <hr class="d-lg-none mt-3 mb-2">

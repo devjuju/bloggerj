@@ -1,6 +1,7 @@
 <?php $title = "Accueil";
 
-use App\Core\Session; ?>
+use App\Core\Auth;
+?>
 
 <?php ob_start(); ?>
 <!-- home-->
@@ -10,28 +11,16 @@ use App\Core\Session; ?>
 <section class="container-fluid bg-light-subtle">
   <div class="container pb-4 mt-n1 mt-lg-0">
     <div class="row">
-      <div class="container">
-        <?php
-        $session = &$_SESSION;
+
+      <?php if (Auth::has('message')) : ?>
+        <div class="alert alert-<?= Auth::get('message', 'class') ?> " role="alert">
+          <?php Auth::delete('message', 'class'); ?>
+          <?php echo Auth::get('message', 'content');
+          Auth::delete('message', 'content'); ?>
+        </div>
+      <?php endif; ?>
 
 
-
-        ?>
-        <?php if (!empty($session['message']['danger'])): ?>
-          <div class="alert alert-danger" role="alert">
-            <?php echo $session['message']['danger'];
-            unset($session['message']['danger']); ?>
-          </div>
-        <?php endif; ?>
-        <?php if (!empty($session['message']['success'])): ?>
-          <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <?php echo $session['message']['success'];
-            unset($session['message']['success']); ?>
-            <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-
-        <?php endif; ?>
-      </div>
       <div class="col-md-6 spacing-col-padding-top-100">
 
         <div class="spacing-content-padding-bottom-40">
@@ -44,10 +33,10 @@ use App\Core\Session; ?>
         </div>
 
         <div class="d-flex flex-column flex-sm-row">
-          <a href="#" class="btn btn-primary mb-3 mb-sm-0 me-sm-3">Voir le blog</a>
+          <a href="index.php?action=blog" class="btn btn-primary mb-3 mb-sm-0 me-sm-3">Voir le blog</a>
           <a href="#" class="btn btn-outline-primary">
             <i class="bi bi-file-pdf-fill fs-xl ms-2 me-n1"></i>
-            Aperçu du CV
+            Aperçu du CV(x)
           </a>
         </div>
       </div>

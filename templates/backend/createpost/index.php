@@ -1,4 +1,8 @@
-<?php $title = "Créer un article"; ?>
+<?php
+
+use App\Core\Auth;
+
+$title = "Créer un article"; ?>
 <?php ob_start();
 ?>
 
@@ -30,13 +34,15 @@
     <div class="offcanvas-body p-4">
       <div class="swiper-wrapper">
         <div class="swiper-slide h-auto spacing-col-padding-top-100">
+
           <div class="d-table position-relative mx-auto avatar-offcanvas">
             <img src="images/avatar.png" class="d-block rounded-circle" width="120" alt="John Doe">
           </div>
           <div class="profil-offcanvas">
-            <h5>Isabella Bocouse</h5>
-            <p>bocouse@example.com</p>
+            <h5><?= Auth::get('auth', 'username'); ?></h5>
+            <p><?= Auth::get('auth', 'email'); ?></p>
           </div>
+
           <!-- Flush list group -->
           <div class="list-group list-group-flush">
             <a href="#" class="list-group-item list-group-item-action d-flex align-items-center active">
@@ -107,8 +113,10 @@
 
 
       <form
-        method="post" class="needs-validation" novalidate>
+        method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
         <div class="row gy-4">
+
+
 
           <!-- Content -->
 
@@ -121,14 +129,11 @@
 
 
 
+
             <div class="row g-4">
               <h3 class="titre-h5">Informations principales</h3>
 
-              <div class="col-sm-12 form-group-style2">
-                <label class="form-label fs-base" for="author">Auteur</label>
-                <input class="form-control" type="text" id="author" name="create_post[author]" placeholder="Entrer votre nom ou pseudo" value="<?= isset($createPost) ? $createPost->getAuthor() : '' ?>">
-                <?= isset($controle["author"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["author"] . "</p>" : '' ?>
-              </div>
+
 
 
               <div class="col-sm-12 form-group-style2">
@@ -136,6 +141,8 @@
 
                 <label class="form-label fs-base" for="category">Catégorie</label>
                 <select class="form-select" id="category" name="create_post[category]" value="<?= isset($createPost) ? $createPost->getCategory() : '' ?>">
+
+
                   <option>Développement de sites web</option>
                   <option>Développement d'application web</option>
                   <?= isset($controle["category"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["category"] . "</p>" : '' ?>
@@ -173,22 +180,6 @@
 
             </div>
 
-            <div class="row g-4 pt-5">
-              <h3 class="titre-h5">Contenu de l'article</h3>
-              <!--begin::Form group-->
-              <div class="col-sm-12 form-group-style">
-                <label for="formFile" class="form-label"> Image mise en avant</label>
-                <input type="file" id="formFile">
-                <br><br>
-                <img src="images/bloggerj-featured-image.svg" class="card-img-top" alt="Image">
-
-
-              </div>
-
-
-
-
-            </div>
 
 
           </div>
@@ -221,8 +212,9 @@
                   <div class="col-sm-12 form-group-style">
                     <img src="images/bloggerj-download-img-2.svg" class="card-img-top" alt="Image">
 
-                    <label for="formFile" class="form-label"></label>
-                    <input type="file" id="formFile">
+                    <label for="image" class="form-label"> Image mise en avant</label>
+                    <input type="file" id="image" name="image" value="<?= isset($createPost) ? $createPost->getImage() : '' ?>">
+                    <?= isset($controle["image"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["image"] . "</p>" : '' ?>
                     <br><br>
                     <!--begin::Description-->
                     <div class="running-text">
@@ -237,6 +229,13 @@
 
                 </div>
               </div>
+
+              <br>
+
+
+
+              <br>
+
             </div>
 
 

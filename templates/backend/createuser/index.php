@@ -1,4 +1,8 @@
-<?php $title = "Créer un utilisateur"; ?>
+<?php
+
+use App\Core\Auth;
+
+$title = "Créer un utilisateur"; ?>
 <?php ob_start();
 ?>
 
@@ -31,16 +35,18 @@
         <div class="offcanvas-body p-4">
             <div class="swiper-wrapper">
                 <div class="swiper-slide h-auto spacing-col-padding-top-100">
+
                     <div class="d-table position-relative mx-auto avatar-offcanvas">
                         <img src="images/avatar.png" class="d-block rounded-circle" width="120" alt="John Doe">
                     </div>
                     <div class="profil-offcanvas">
-                        <h5>Isabella Bocouse</h5>
-                        <p>bocouse@example.com</p>
+                        <h5><?= Auth::get('auth', 'username'); ?></h5>
+                        <p><?= Auth::get('auth', 'email'); ?></p>
                     </div>
+
                     <!-- Flush list group -->
                     <div class="list-group list-group-flush">
-                        <a href="#" class="list-group-item list-group-item-action d-flex align-items-center active">
+                        <a href="index.php?action=posts" class="list-group-item list-group-item-action d-flex align-items-center">
                             <div class="box-icon-account">
                                 <i class="bi bi-pin-fill"></i>
                             </div>
@@ -55,7 +61,7 @@
 
                             Commentaires
                         </a>
-                        <a href="index.php?action=users" class="list-group-item list-group-item-action d-flex align-items-center ">
+                        <a href="index.php?action=users" class="list-group-item list-group-item-action d-flex align-items-center active">
                             <div class="box-icon-account">
                                 <i class="bi bi-person-fill"></i>
                             </div>
@@ -88,10 +94,10 @@
         <nav class="container py-4 mb-lg-2" aria-label="breadcrumb">
             <ol class="breadcrumb pt-lg-3 mb-0">
                 <li class="breadcrumb-item">
-                    <a class="breadcrumb-links" href="index.php?action=admin"><i class="bi bi-speedometer2 fs-lg me-1"></i>Tableau de bord</a>
+                    <a class="breadcrumb-links" href="index.php?action=dashboard"><i class="bi bi-speedometer2 fs-lg me-1"></i>Tableau de bord</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a class="breadcrumb-links" href="index.php?action=posts">Articles</a>
+                    <a class="breadcrumb-links" href="index.php?action=users">Utilisateurs</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">Créer un utilisateur</li>
             </ol>
@@ -106,7 +112,7 @@
 
         <div class="container spacing-col-padding-top-100 spacing-col-padding-bottom-100">
 
-            <form method="post" class="needs-validation" novalidate>
+            <form method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
                 <div class="row gy-4">
 
                     <!-- Content -->
@@ -116,61 +122,48 @@
                         <p class="running-text mb-4 pb-2">Veillez remplir le formulaire de création pour créer un nouvel utilisateur.</p>
                         <div class="row g-4">
                             <h3 class="titre-h5">Informations principales</h3>
-                            <!--begin::Form group-->
-                            <div class="col-sm-12 form-group-style">
-                                <label class="form-label fs-base" for="sujet">Pseudo</label>
-                                <input type="text" placeholder="" id="sujet" name="contact[sujet]" value="">
 
+                            <div class="col-sm-12 form-group-style2">
+                                <label class="form-label fs-base" for="role">Role</label>
+                                <select class="form-select" id="role" name="create_user[role]" value="<?= isset($createUser) ? $createUser->getRole() : '' ?>">
+                                    <option>utilisateur</option>
+                                    <option>administrateur</option>
+                                    <?= isset($controle["role"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["role"] . "</p>" : '' ?>
+                                </select>
                             </div>
 
-                            <!--begin::Form group-->
+
+
                             <div class="col-sm-6 form-group-style">
                                 <label class="form-label fs-base" for="lastname">Nom</label>
-                                <input type="text" id="lastname" name="contact[lastname]" placeholder="Entrer un nom" value="">
+                                <input class="form-control" type="text" placeholder="" id="lastname" name="create_user[lastname]" value="<?= isset($createUser) ? $createUser->getLastName() : '' ?>">
+                                <?= isset($controle["lastname"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["lastname"] . "</p>" : '' ?>
 
                             </div>
                             <!--end::Form group-->
                             <!--begin::Form group-->
                             <div class="col-sm-6 form-group-style">
                                 <label class="form-label fs-base" for="firstname">Prénom</label>
-                                <input type="text" id="firstname" name="contact[firstname]" placeholder="" value="">
-                            </div>
-
-                            <div class="col-sm-12 form-group-style">
-
-
-                                <!--begin::Conditions-->
-                                <div class="d-flex flex-wrap align-items-center text-gray-600 gap-5 mb-7">
-                                    <!--begin::Label-->
-                                    <label class="form-label">Role de l'utilisateur :</label>
-                                    <!--end::Label-->
-
-
-                                    <!--begin::Radio-->
-                                    <div class="form-check form-check-custom form-check-solid">
-                                        <input class="form-check-input" type="radio" name="conditions" value="" id="all_conditions" checked="checked">
-                                        <label class="form-check-label" for="all_conditions">
-                                            utilisateur
-                                        </label>
-                                    </div>
-                                    <!--end::Radio-->
-
-                                    <!--begin::Radio-->
-                                    <div class="form-check form-check-custom form-check-solid">
-                                        <input class="form-check-input" type="radio" name="conditions" value="" id="any_conditions">
-                                        <label class="form-check-label" for="any_conditions">
-                                            administrateur
-                                        </label>
-                                    </div>
-                                    <!--end::Radio-->
-                                </div>
-                                <!--end::Conditions-->
+                                <input class="form-control" type="text" placeholder="" id="firstname" name="create_user[firstname]" value="<?= isset($createUser) ? $createUser->getFirstname() : '' ?>">
+                                <?= isset($controle["firstname"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["firstname"] . "</p>" : '' ?>
                             </div>
 
                             <!--begin::Form group-->
                             <div class="col-sm-12 form-group-style">
+                                <label class="form-label fs-base" for="username">Pseudo</label>
+                                <input class="form-control" type="text" placeholder="" id="username" name="create_user[username]" value="<?= isset($createUser) ? $createUser->getUsername() : '' ?>">
+                                <?= isset($controle["username"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["username"] . "</p>" : '' ?>
+
+                            </div>
+                            <!--begin::Form group-->
+
+
+
+                            <!--begin::Form group-->
+                            <div class="col-sm-12 form-group-style">
                                 <label class="form-label fs-base" for="email">Email</label>
-                                <input type="email" placeholder="" id="email" name="contact[email]" value="">
+                                <input type="email" placeholder="" id="email" name="create_user[email]" value="<?= isset($createUser) ? $createUser->getEmail() : '' ?>">
+                                <?= isset($controle["email"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["email"] . "</p>" : '' ?>
 
                             </div>
 
@@ -180,14 +173,23 @@
 
                         <div class="row g-4 pt-5">
                             <h3 class="titre-h5">Sécurité du compte</h3>
-                            <div class="col-sm-6 form-group-style">
-                                <label class="form-label" for="new_password">Mot de passe</label>
-                                <input id="new_password" required="" type="password">
+                            <div class="col-sm-12 form-group-style">
+                                <!--begin::Form group-->
+                                <div class="col-sm-12 form-group-style">
+                                    <div class="form-group-password"> <label for="password" class="form-label fs-base">Mot de passe</label>
+                                        <input type="password" id="password" name="create_user[password]" value="<?= isset($createUser) ? $createUser->getPassword() : '' ?>">
+                                        <?= isset($controle["password"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["password"] . "</p>" : '' ?>
+                                    </div>
+                                </div>
+                                <!--begin::Form group-->
                             </div>
+
+                            <!--
                             <div class="col-sm-6 form-group-style">
                                 <label class="form-label" for="new_password">Confirmer le mot de passe</label>
                                 <input id="new_password" required="" type="password">
                             </div>
+                    -->
 
 
 
@@ -206,17 +208,8 @@
                                 <div class="card-body">
                                     <div class="text-center">
                                         <h4 class="titre-h4">Ajouter l'utilisateur</h4>
-                                        <div class="d-flex justify-content-center bd-highlight mb-3">
-                                            <div class="meta-content-post bd-highlight">
-                                                <i class="bi bi-person-fill fs-base me-1"></i>
-                                                <span class="fs-sm">Auteur</span>
-                                            </div>
-                                            <div class="meta-content-post bd-highlight">
-                                                <i class="bi bi-clock-fill fs-base me-1"></i>
-                                                <span class="fs-sm">Sep 16, 2023</span>
-                                            </div>
-                                        </div>
 
+                                        <br>
                                     </div>
 
 
@@ -230,18 +223,16 @@
                                 </div>
                             </div>
                             <div class="card card-light-shadow mb-5">
+                                <div class="card-header">
+                                    <img src="images/profil-user-defaut-img.svg" class="card-img-profil" alt="Image">
+                                </div>
                                 <div class="card-body text-center pt-0">
 
                                     <div class="col-sm-12 form-group-style">
-                                        <img src="images/profil-user-defaut-img.svg" class="rounded-circle" alt="Image" width="150">
-                                        <br> <br>
-                                        <label for="formFile" class="form-label"></label>
-                                        <input type="file" id="formFile">
-                                        <br><br>
-                                        <!--begin::Description-->
-                                        <div class="running-text">
-                                            Définissez l’avatar de l'utilisateur. Seuls les fichiers image *.png, *.jpg et *.jpeg sont acceptés</div>
-                                        <!--end::Description-->
+
+                                        <label for="image" class="form-label"> Photo de profil</label>
+                                        <input type="file" id="image" name="image" value="<?= isset($createUser) ? $createUser->getImage() : '' ?>">
+                                        <?= isset($controle["image"]) ? '<p><i class="bi bi-arrow-right-short"></i>' . $controle["image"] . "</p>" : '' ?>
                                     </div>
 
 

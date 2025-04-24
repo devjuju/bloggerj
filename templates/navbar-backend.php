@@ -12,7 +12,7 @@
                 <li class="nav-item">
                     <a href="index.php?action=dashboard" class="nav-link active">
                         <i class="bi bi-wrench-adjustable opacity-70 fs-lg me-2"></i>
-                        Tableau de bord
+                        Tableau de bord du back
                     </a>
                 </li>
                 <li class="nav-item">
@@ -31,6 +31,29 @@
 
                 </a>
             </div>
+
+            <div class="position-absolute  start-50 translate-middle">
+                <?php
+
+                use App\Core\Auth;
+
+                if (Auth::has('message')) : ?>
+                    <div class="alert alert-<?= Auth::get('message', 'class') ?> " role="alert">
+                        <?php Auth::delete('message', 'class'); ?>
+                        <?php echo Auth::get('message', 'content');
+                        Auth::delete('message', 'content'); ?>
+                    </div>
+                <?php endif; ?>
+
+
+            </div>
+
+
+
+
+
         </div>
+
+
     </div>
 </header>

@@ -1,5 +1,11 @@
-<?php $title = "Articles"; ?>
-<?php ob_start();
+<?php
+
+use App\Core\Auth;
+use App\Core\DateFormatter;
+
+$title = "Articles";
+
+ob_start();
 ?>
 
 
@@ -31,13 +37,15 @@
     <div class="offcanvas-body p-4">
       <div class="swiper-wrapper">
         <div class="swiper-slide h-auto spacing-col-padding-top-100">
+
           <div class="d-table position-relative mx-auto avatar-offcanvas">
-            <img src="images/avatar.png" class="d-block rounded-circle" width="120" alt="John Doe">
+            <img src="uploads/<?= Auth::get('auth', 'image') ?>" class="d-block rounded-circle" width="120" alt="">
           </div>
           <div class="profil-offcanvas">
-            <h5>Isabella Bocouse</h5>
-            <p>bocouse@example.com</p>
+            <h5><?= Auth::get('auth', 'username'); ?></h5>
+            <p><?= Auth::get('auth', 'email'); ?></p>
           </div>
+
           <!-- Flush list group -->
           <div class="list-group list-group-flush">
             <a href="#" class="list-group-item list-group-item-action d-flex align-items-center active">
@@ -85,6 +93,7 @@
 <main>
 
   <section class="container-fluid p-5 bg-light-subtle">
+
     <nav class="container py-4 mb-lg-2" aria-label="breadcrumb">
       <ol class="breadcrumb pt-lg-3 mb-0">
         <li class="breadcrumb-item">
@@ -114,15 +123,19 @@
             <?php foreach ($posts as $post): ?>
               <div class="col pb-3">
                 <article class="card card-article border-0 ">
+
                   <div class="position-relative">
-                    <img src="images/<?= $post->thumbnail_image ?>" class="card-img-top" alt="Image">
+
+
+                    <span class="badge bg-primary text-white position-absolute top-0 start-0 zindex-5 me-3 mt-3 running-text"><?= $post->status ?></span>
+                    <img src="uploads/<?= $post->image ?>" class="card-img-top" alt="Image">
                   </div>
                   <div class="card-body">
                     <div class="marging-top-20 marging-bottom-10">
                       <span class="fs-sm text-primary"><?= $post->category ?></span>
                     </div>
                     <h3>
-                      <a class="card-post-title" href="index.php?action=post"><?= $post->title ?></a>
+                      <a class="card-post-title" href="index.php?action=post&id=<?= $post->id ?>"><?= $post->title ?></a>
                     </h3>
                     <div class="d-flex flex-row bd-highlight mb-3">
                       <div class="meta-content-blog bd-highlight">
@@ -131,7 +144,7 @@
                       </div>
                       <div class="meta-content-blog bd-highlight">
                         <i class="bi bi-clock-fill fs-base me-1"></i>
-                        <span class="fs-sm"><?= $post->created_at ?></span>
+                        <span class="fs-sm"><?= DateFormatter::enFrancais($post->created_at); ?></span>
                       </div>
                     </div>
                     <p class="running-text"><?= $post->excerpt ?></p>
@@ -139,20 +152,74 @@
 
                   <div class="card-footer">
                     <div class="d-flex">
-                      <!-- Aperçu -->
-                      <a href="index.php?action=blog" class="btn btn-outline-primary spacing-element-marging-right-10">
-                        <?= $post->status ?>
 
-                      </a>
+
+                      <!-- Désactivé -->
+
+
+
+
+                      <?php if ($post->status  === "Désactivé"): ?>
+                        <div class="box-show-icon">
+                          <i class="bi bi-eye-slash"></i>
+                        </div>
+
+                        <a href="index.php?action=active_post&id=<?= $post->id ?>" class="box-hide-outline-icon">
+                          <i class="bi bi-eye"></i>
+                        </a>
+                      <?php else: ?>
+                        <div class="box-show-outline-icon">
+                          <i class="bi bi-eye"></i>
+                        </div>
+
+                        <a href="index.php?action=desactive_post&id=<?= $post->id ?>" class="box-hide-icon">
+                          <i class="bi bi-eye-slash"></i>
+                        </a>
+                      <?php endif; ?>
+
+
+
+                      <!-- Activer -->
+
+
+
+
+
+
+
+
+
+
+
+
                       <!-- Editer -->
-                      <a href="#" class="btn btn-icon-circle-primary">
-                        <i class="bi bi-pencil-fill"></i>
+                      <a href="index.php?action=update_post&id=<?= $post->id ?>" class="btn btn-icon-primary">
+                        <i class="bi bi-pencil-square"></i>
                       </a>
-                      <!-- Supprimer -->
-                      <a href="#" class="btn btn-icon-circle-secondary">
-                        <i class="bi bi-trash3-fill"></i>
+
+
+                      <!-- form delete -->
+                      <a href="index.php?action=delete_post&id=<?= $post->id ?>" class="btn btn-icon-secondary">
+                        <i class="bi bi-trash3"></i>
                       </a>
+
                     </div>
+                    <br>
+                    <form action="" method="POST">
+                      <div class="mb-3 visually-hidden">
+                        <label for="id" class="form-label">Identifiant de la recette</label>
+                        <input type="hidden" class="form-control" id="id" name="id" value="">
+                      </div>
+
+
+
+                    </form>
+
+
+                    <!-- Theme mode switch. Can be used oly once on the page! -->
+
+
+
                   </div>
                 </article>
               </div>

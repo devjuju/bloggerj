@@ -1,4 +1,9 @@
-<?php $title = "Commentaires"; ?>
+<?php
+
+use App\Core\Auth;
+use App\Core\DateFormatter;
+
+$title = "Commentaires"; ?>
 <?php ob_start();
 ?>
 
@@ -29,13 +34,15 @@
     <div class="offcanvas-body p-4">
       <div class="swiper-wrapper">
         <div class="swiper-slide h-auto spacing-col-padding-top-100">
+
           <div class="d-table position-relative mx-auto avatar-offcanvas">
-            <img src="images/avatar.png" class="d-block rounded-circle" width="120" alt="John Doe">
+            <img src="uploads/<?= Auth::get('auth', 'image') ?>" class="d-block rounded-circle" width="120" alt="">
           </div>
           <div class="profil-offcanvas">
-            <h5>Isabella Bocouse</h5>
-            <p>bocouse@example.com</p>
+            <h5><?= Auth::get('auth', 'username'); ?></h5>
+            <p><?= Auth::get('auth', 'email'); ?></p>
           </div>
+
           <!-- Flush list group -->
           <div class="list-group list-group-flush">
             <a href="index.php?action=posts" class="list-group-item list-group-item-action d-flex align-items-center">
@@ -86,7 +93,7 @@
     <nav class="container py-4 mb-lg-2" aria-label="breadcrumb">
       <ol class="breadcrumb pt-lg-3 mb-0">
         <li class="breadcrumb-item">
-          <a class="breadcrumb-links" href="index.php?action=admin"><i class="bi bi-speedometer2 fs-lg me-1"></i>Tableau de bord</a>
+          <a class="breadcrumb-links" href="index.php?action=dashboard"><i class="bi bi-speedometer2 fs-lg me-1"></i>Tableau de bord</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">Commentaires</li>
       </ol>
@@ -106,130 +113,101 @@
         <!-- Content -->
 
         <div class="col-lg-7">
+          <!-- Comment -->
+          <?php foreach ($comments as $comment): ?>
+            <div class="py-4">
 
-          <div class="py-4">
+              <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3  spacing-content-padding-top-40">
+                <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
+                  <div class="d-flex align-items-center me-3">
+                    <img src="images/avatar.png" class="rounded-circle" width="48" alt="Avatar">
+                    <div class="ps-3">
+                      <h6 class="titre-h6 mb-0"><?= $comment->users_id ?></h6>
+                      <span class="running-text">voir le profil</span>
+                    </div>
+                  </div>
 
-            <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3  spacing-content-padding-top-40">
-              <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
-                <div class="d-flex align-items-center me-3">
-                  <img src="images/avatar.png" class="rounded-circle" width="48" alt="Avatar">
-                  <div class="ps-3">
-                    <h6 class="titre-h6 mb-0">Esther Howard</h6>
-                    <span class="running-text">Membre de BloggerJ</span>
+                </div>
+                <div class="d-flex align-items-center position-relative ps-md-3  mb-2">
+
+                  <div class="d-flex">
+
+                    <?php if ($comment->status  === "rejeté"): ?>
+                      <a href="" class="btn btn-icon-primary">
+                        <i class="bi bi-hand-thumbs-down"></i>
+                      </a>
+                    <?php else: ?>
+                      <a href="index.php?action=reject_comment&id=<?= $comment->id ?>" class="btn btn-icon-outline-primary">
+                        <i class="bi bi-hand-thumbs-down"></i>
+                      </a>
+                    <?php endif; ?>
+
+
+
+
+
+
+                    <?php if ($comment->status  === "approuvé"): ?>
+                      <a href="" class="btn btn-icon-primary">
+                        <i class="bi bi-hand-thumbs-up"></i>
+                      </a>
+                    <?php else: ?>
+                      <a href="index.php?action=validate_comment&id=<?= $comment->id ?>" class="btn btn-icon-outline-primary">
+                        <i class="bi bi-hand-thumbs-up"></i>
+                      </a>
+                    <?php endif; ?>
+
+
+
+
+
+                    <!-- Supprimer -->
+                    <a href="index.php?action=delete_comment&id=<?= $comment->id ?>" class="btn btn-icon-secondary">
+                      <i class="bi bi-trash3"></i>
+                    </a>
                   </div>
                 </div>
-
               </div>
-              <div class="d-flex align-items-center position-relative ps-md-3  mb-2">
+              <div class="card card-comment mb-3">
+                <div class="row g-0">
+                  <div class="col-md-12">
+                    <div class="card-body">
+                      <div class="d-flex flex-row bd-highlight mb-3">
+                        <div class="meta-comment bd-highlight">
+                          <i class="bi bi-pin-fill fs-base me-1"></i>
+                          <a href="index.php?action=register" class="color-link-primary"><?= $comment->posts_id ?></a>
 
-                <div class="d-flex">
+                        </div>
+                        <div class="meta-comment bd-highlight ">
+                          <i class="bi bi-clock-fill fs-base me-1"></i>
+                          <span class="fs-sm">Publié le: <?= DateFormatter::enFrancais($comment->created_at); ?></span>
 
-                  <!-- Aperçu -->
-                  <a href="index.php?action=blog" class="btn btn-primary spacing-element-marging-right-10 disabled">
-                    Commentaire validé
-
-                  </a>
-
-
-
-                  <!-- Supprimer -->
-                  <a href="#" class="btn btn-icon-circle-secondary">
-                    <i class="bi bi-trash3-fill"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card card-comment mb-3">
-              <div class="row g-0">
-                <div class="col-md-3">
-                  <img src="images/article-img-vignette-chalets-et-caviar.png" class="img-fluid " alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <div class="d-flex flex-row bd-highlight mb-3">
-                      <div class="meta-comment bd-highlight">
-                        <i class="bi bi-chat-square-dots-fill fs-base me-1"></i>
-                        <a href="index.php?action=register" class="color-link-primary">Chalets et caviar</a>
+                        </div>
 
                       </div>
-                      <div class="meta-comment bd-highlight ">
-                        <i class="bi bi-clock-fill fs-base me-1"></i>
-                        <span class="fs-sm">Publié le:</span>
+                      <p class="running-text"><?= $comment->content ?></p>
+                      <hr>
+                      <p class="running-text">Le commentaire est : <strong><?= $comment->status ?> </strong> </p>
 
-                      </div>
+
+
+
 
                     </div>
-                    <p class="running-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-
                   </div>
+
                 </div>
               </div>
+
+
+
             </div>
+          <?php endforeach; ?>
 
 
 
-          </div>
-          <div class="py-4">
-
-            <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3  spacing-content-padding-top-40">
-              <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
-                <div class="d-flex align-items-center me-3">
-                  <img src="images/avatar.png" class="rounded-circle" width="48" alt="Avatar">
-                  <div class="ps-3">
-                    <h6 class="titre-h6 mb-0">Esther Howard</h6>
-                    <span class="running-text">Membre de BloggerJ</span>
-                  </div>
-                </div>
-
-              </div>
-              <div class="d-flex align-items-center position-relative ps-md-3  mb-2">
-
-                <div class="d-flex">
-
-                  <!-- Aperçu -->
-                  <a href="index.php?action=blog" class="btn btn-outline-primary spacing-element-marging-right-10">
-                    Valider le commentaire
-
-                  </a>
 
 
-                  <!-- Supprimer -->
-                  <a href="#" class="btn btn-icon-circle-secondary">
-                    <i class="bi bi-trash3-fill"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card card-comment mb-3">
-              <div class="row g-0">
-                <div class="col-md-3">
-                  <img src="images/article-img-vignette-chalets-et-caviar.png" class="img-fluid " alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <div class="d-flex flex-row bd-highlight mb-3">
-                      <div class="meta-comment bd-highlight">
-                        <i class="bi bi-chat-square-dots-fill fs-base me-1"></i>
-                        <a href="index.php?action=register" class="color-link-primary">Chalets et caviar</a>
-
-                      </div>
-                      <div class="meta-comment bd-highlight ">
-                        <i class="bi bi-clock-fill fs-base me-1"></i>
-                        <span class="fs-sm">Publié le:</span>
-
-                      </div>
-
-                    </div>
-                    <p class="running-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-
-          </div>
         </div>
 
         <!-- Sharing -->
