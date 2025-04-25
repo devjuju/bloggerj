@@ -32,7 +32,8 @@
                 </a>
             </div>
 
-            <div class="position-absolute  start-50 translate-middle">
+            <div class="display-alerts position-absolute 
+            start-50 translate-middle">
                 <?php
 
                 use App\Core\Auth;
@@ -47,6 +48,8 @@
 
 
             </div>
+
+
 
 
 

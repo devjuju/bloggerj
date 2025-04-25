@@ -517,6 +517,16 @@ main {
   color: #986df8;
 }
 
+/* Alertes */
+.display-alerts {
+  margin-top: 250px;
+}
+.display-alerts .alert-success {
+  color: #17c653;
+  border-color: #17c653;
+  background-color: #dfffea;
+}
+
 /* Breadcrumb */
 .breadcrumb {
   font-family: "Hind Siliguri", sans-serif;
